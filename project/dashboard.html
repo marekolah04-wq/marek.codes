@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inetraktivní Dashboard , Projekt | marek.codes</title>
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/project-detail.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/queries.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+  </style>
+</head>
+<body>
+
+    <header id="navbar">
+    <div class="container nav-container">
+        <a href="../index.html" class="logo">marek.codes</a>
+
+        <button class="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-menu">
+        <ul>
+            <li><a href="../index.html#projects">Projekty</a></li>
+            <li><a href="../index.html#services">Služby</a></li>
+            <li><a href="../index.html#about">O mně</a></li>
+            <li><a href="../index.html#contact">Kontakt</a></li>
+            <li><button id="lang-switch">CZ / EN</button></li>
+        </ul>
+        </nav>
+    </div>
+    </header>
+
+
+<main class="project-detail">
+  <div class="container">
+    <div class="breadcrumbs reveal">
+      <a href="../index.html#projects"
+         data-cz="← Zpět na projekty"
+         data-en="← Back to projects"></a>
+      <span>/</span>
+      <span data-cz="Interaktivní dashboard"
+            data-en="Interactive dashboard"></span>
+    </div>
+
+    <div class="wrap">
+      <!-- vlevo -->
+      <section class="project-hero reveal">
+        <img src="../assets/img/project-3.png" alt="Interaktivní dashboard, náhled webu">
+      </section>
+
+      <!-- vpravo -->
+      <aside class="project-meta reveal">
+        <h1 class="project-title"
+            data-cz="Interaktivní dashboard"
+            data-en="Interactive dashboard"></h1>
+
+        <p class="project-lead"
+           data-cz="Mini dashboard pro rychlou informaci bez zbytečností. Vybereš město a hned vidíš počasí a dnešní svátek, motiv se přepíná podle času i ručně."
+           data-en="A small dashboard for quick info without clutter. Pick a city and instantly see the weather and today’s name day, the theme switches by time and can be toggled manually."></p>
+
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Responsive</span>
+          <span class="tag">API</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="https://phenomenal-griffin-0f51eb.netlify.app/" target="_blank" rel="noopener"
+             data-cz="Zobrazit live"
+             data-en="View live"></a>
+
+          <a class="btn-outline" href="../index.html#contact"
+             data-cz="Chci podobný web"
+             data-en="I want a similar website"></a>
+        </div>
+
+        <div class="detail-section">
+          <h3 data-cz="Co jsem řešil"
+              data-en="What I focused on"></h3>
+          <ul>
+            <li data-cz="Práci se stavem aplikace a okamžitou aktualizaci UI podle výběru města"
+                data-en="State handling and instant UI updates based on selected city"></li>
+            <li data-cz="Napojení na data a bezpečné zobrazení hodnot i při chybě načítání"
+                data-en="Data fetching and safe rendering, including error states"></li>
+            <li data-cz="Přepínání motivu podle času a ruční toggle pro uživatele"
+                data-en="Time-based theme switching plus manual user toggle"></li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h3 data-cz="Výsledek"
+              data-en="Result"></h3>
+          <p data-cz="Rychlý a přehledný dashboard, který ukáže to důležité během pár vteřin."
+             data-en="A fast, clean dashboard that shows the essentials in seconds."></p>
+        </div>
+      </aside>
+    </div>
+
+    <section class="gallery reveal">
+      <img src="../assets/img/PROJECT-DETAIL/dashboard-dark.png"
+           alt="Interaktivní dashboard, ukázka tmavého režimu"
+           loading="lazy" decoding="async">
+
+      <img src="../assets/img/PROJECT-DETAIL/dashboard-light.png"
+           alt="Interaktivní dashboard, ukázka obrazovky světlého režimu"
+           loading="lazy" decoding="async">
+    </section>
+  </div>
+</main>
+
+
+
+    <footer id="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../#hero" class="footer-logo">marek.codes</a>
+                <p data-cz="Moderní rychlé weby. Čistý design, výkon, detail."
+                    data-en="Modern fast websites. Clean design, performance, detail.">
+                    Moderní rychlé weby. Čistý design, výkon, detail.
+                </p>
+            </div>
+
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="../#projects" data-cz="Projekty" data-en="Projects">Projekty</a>
+                <a href="../#services" data-cz="Služby" data-en="Services">Služby</a>
+                <a href="../#about" data-cz="O mně" data-en="About">O mně</a>
+                <a href="../#contact" data-cz="Kontakt" data-en="Contact">Kontakt</a>
+            </nav>
+
+            <div class="footer-meta">
+                <a href="mailto:marekolah04@gmail.com" class="footer-cta" data-cz="Napiš mi" data-en="Email me">Napiš mi</a>
+
+                <small data-cz="© 2026 Marek Oláh. Všechna práva vyhrazena." data-en="© 2026 Marek. All rights reserved.">
+                    © 2026 Marek. Všechna práva vyhrazena.
+                </small>
+
+                <div class="footer-social" aria-label="Social links">
+                    <a class="social" href="https://github.com/marekolah04-wq" target="_blank" rel="noopener"
+                        aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M12 .5C5.73.5.75 5.64.75 12c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.26.79-.57v-2.1c-3.2.71-3.87-1.4-3.87-1.4-.53-1.38-1.29-1.75-1.29-1.75-1.06-.74.08-.73.08-.73 1.17.08 1.79 1.23 1.79 1.23 1.04 1.81 2.73 1.29 3.4.99.11-.77.41-1.29.74-1.59-2.56-.3-5.26-1.3-5.26-5.8 0-1.28.45-2.33 1.19-3.15-.12-.3-.52-1.52.11-3.18 0 0 .97-.32 3.18 1.2.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.21-1.52 3.18-1.2 3.18-1.2.63 1.66.23 2.88.11 3.18.74.82 1.19 1.87 1.19 3.15 0 4.51-2.7 5.5-5.28 5.79.42.37.79 1.1.79 2.22v3.29c0 .31.21.68.8.57 4.56-1.53 7.85-5.85 7.85-10.95C23.25 5.64 18.27.5 12 .5z" />
+                        </svg>
+                    </a>
+
+                    <a class="social" href="https://www.linkedin.com/in/marek-ol%C3%A1h-b2337137b/" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.09H4.8V24H.22V8.09zM8.09 8.09h4.4v2.17h.06c.61-1.16 2.1-2.38 4.33-2.38 4.63 0 5.49 3.05 5.49 7.01V24h-4.58v-7.72c0-1.84-.03-4.21-2.57-4.21-2.57 0-2.96 2-2.96 4.08V24H8.09V8.09z" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+
+<script src="../js/navbar.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+#hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: var(--color-primary);
+}
+
+#hero .section-card {
+  padding: 7rem 9rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:2.4rem;
+}
+
+
+#hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    letter-spacing: -0.02em;
+}
+
+#hero p {
+    max-width: 680px;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-secondary); 
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.hero-buttons .btn {
+    padding: 0.8rem 2rem;
+    color: #fff;
+    background-color: var(--color-accent);
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.hero-buttons .btn:hover {
+    background-color: #339af0;
+}
+
+.hero-buttons .btn-outline {
+    opacity: 0.8;
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--color-accent);
+    background: transparent;
+    border-radius: 8px;
+    color: var(--color-accent);
+    transition: all 0.3s;
+}
+
+.hero-buttons .btn-outline:hover {
+    opacity: 1;
+    background-color: var(--color-accent);
+    color: #fff;
+}

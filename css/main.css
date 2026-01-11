@@ -1,0 +1,182 @@
+/* main.css */
+:root {
+  --color-bg: #0f111a;
+  --color-primary: #ffffff;
+  --color-secondary: #b6c2d1;
+  --color-accent: #4dabf7; 
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-text: 'Inter', sans-serif;
+
+  --font-size-h1: 3rem;
+  --font-size-h2: 2.5rem;
+  --font-size-text: 1rem;
+  --line-height-text: 1.6;
+  --line-height-heading: 1.2;
+}
+
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-text);
+  font-size: var(--font-size-text);
+  line-height: var(--line-height-text);
+  color: var(--color-primary);
+  background-color: var(--color-bg);
+}
+
+
+
+.section-bg {
+  position: absolute;
+  inset: -150px;
+  background-image: url('../assets/img/mouse.svg');
+  background-size: 28px 28px;
+  background-repeat: repeat;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+  animation: moveCursors 20s linear infinite;
+}
+.section-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+  to bottom,
+  rgba(15,17,26,0.95) 0%,
+  rgba(15,17,26,0.6) 25%,
+  rgba(15,17,26,0.25) 55%,
+  rgba(15,17,26,0.1) 75%,
+  rgba(15,17,26,0) 100%
+);
+}
+
+
+@keyframes moveCursors {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 280px 200px;
+  }
+}
+
+
+section {
+  margin-top: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-card {
+  margin-top: 8rem;
+  background: rgba(15,17,26,0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 4rem 3rem;
+  position: relative;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.section-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(77,171,247,0.12),
+    transparent 35%
+  );
+  pointer-events: none;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: var(--line-height-heading);
+  margin: 0 0 1rem 0;
+}
+
+p, li, span {
+  font-family: var(--font-text);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+button {
+  font-family: var(--font-text);
+  cursor: pointer;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+button:hover {
+  color: var(--color-accent);
+}
+
+.copy-email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(77,171,247,0.35);
+  background: rgba(77,171,247,0.08);
+}
+.copy-email.copied {
+  border-color: rgba(77,171,247,0.75);
+  box-shadow: 0 15px 30px rgba(77,171,247,0.12);
+  transform: translateY(-1px);
+  transition: 0.2s;
+}
+
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+:root {
+  --nav-height: 86px; 
+  --section-pad-y: 8rem;
+}
+
+section {
+  scroll-margin-top: calc(var(--nav-height) + 24px);
+}
+
+
+
