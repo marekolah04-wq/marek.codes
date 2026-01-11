@@ -104,15 +104,23 @@
   margin-top: 1.5rem;
 }
 
+.actions a {
+  flex: 1 1 180px;      /* dva vedle sebe, ale když je málo místa, tak se zalomí */
+  min-width: 0;         /* důležitý proti přetékání */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* text tlačítek */
 .actions .btn,
 .actions .btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.2rem;
   border-radius: 12px;
-  font-weight: 600;
+  padding: 0.9rem 1.15rem;
+  line-height: 1.15;
+  width: 100%;
+  white-space: normal;       /* dovolí zalomení */
+  overflow-wrap: anywhere;   /* zalomí i dlouhý slovo */
+  text-align: center;
 }
 
 .actions .btn {
