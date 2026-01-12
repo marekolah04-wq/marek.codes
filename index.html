@@ -27,6 +27,27 @@
         content="Jsem Marek (22). Stavím moderní rychlé weby. Čistý design, výkon, detail.">
     <meta name="twitter:image" content="https://marek.codes/assets/img/og-img.png">
 
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQL4NTPRN0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // default consent = denied (dokud user neklikne)
+    gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+    });
+
+    gtag('js', new Date());
+    gtag('config', 'G-PQL4NTPRN0', { anonymize_ip: true });
+    </script>
+
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -38,6 +59,7 @@
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/pricing.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -64,6 +86,8 @@
                 <ul>
                     <li><a href="#projects" data-cz="Projekty" data-en="Projects">Projekty</a></li>
                     <li><a href="#services" data-cz="Služby" data-en="Services">Služby</a></li>
+
+                    <li><a href="#pricing" data-cz="Ceník" data-en="Pricing">Ceník</a></li>
                     <li><a href="#about" data-cz="O mně" data-en="About">O mně</a></li>
                     <li><a href="#contact" data-cz="Kontakt" data-en="Contact">Kontakt</a></li>
                     <li><button id="lang-switch" data-cz="CZ / EN" data-en="CZ / EN">CZ / EN</button></li>
@@ -78,7 +102,7 @@
     <section id="hero">
         <div class="section-bg"></div>
         <div class="container section-card hero-content">
-            <h1 data-cz="Stavím moderní weby, které dávají smysl." data-en="I build modern websites that make sense.">
+            <h1 data-cz="Stavím moderní weby, které dávají smysl." data-en="I build modern websites that make sense."> Stavím moderní weby, které dávají smysl.
             </h1>
 
             <p data-cz="Jmenuji se Marek, je mi 22 let a pomáhám lidem a firmám proměnit nápad ve funkční, rychlý a přehledný web."
@@ -125,8 +149,8 @@
                                 Minimalistický web pro městskou kavárnu, která staví na atmosféře, jasných CTA a
                                 přehledném menu s cenami. Cíl je ukázat vibe, nabídku a dovést člověka k návštěvě.
                             </p>
-                            <span class="project-cta" data-cz="Detail →" data-en="Detail →">Zobrazit web
-                                →</span>
+                            <span class="project-cta" data-cz="Detail →" data-en="Detail →">Detail →
+                                </span>
                         </div>
                     </a>
                 </article>
@@ -148,8 +172,8 @@
                                 Konverzní web pro online coaching, jasně pojmenovává problém, nabízí systémové řešení a
                                 vede uživatele k rezervaci konzultace přes jednoduchý formulář.
                             </p>
-                            <span class="project-cta" data-cz="Detail →" data-en="Detail →">Zobrazit web
-                                →</span>
+                            <span class="project-cta" data-cz="Detail →" data-en="Detail →">Detail 
+                                </span>
                         </div>
                     </a>
                 </article>
@@ -171,8 +195,8 @@
                                 Interaktivní dashboard pro česká města, ukazuje počasí a svátek, navíc umí automaticky
                                 přepínat motiv podle času a nabídne ruční volbu města.
                             </p>
-                            <span class="project-cta" data-cz="Detail →" data-en="Detail →">Zobrazit web
-                                →</span>
+                            <span class="project-cta" data-cz="Detail →" data-en="Detail →">Detail →
+                                </span>
                         </div>
                     </a>
                 </article>
@@ -222,6 +246,138 @@
             </div>
         </div>
     </section>
+
+
+    <section id="pricing">
+  <div class="container">
+    <div class="pricing-header reveal">
+      <h2 data-cz="Ceník balíčků" data-en="Pricing packages">Ceník balíčků</h2>
+      <p
+        data-cz="Orientace pro rychlý start, finální cenu doladíme podle obsahu a rozsahu."
+        data-en="A quick starting point, final price depends on content and scope."
+      >
+        Orientace pro rychlý start, finální cenu doladíme podle obsahu a rozsahu.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- START -->
+      <article class="price-card reveal">
+        <div class="price-top">
+          <h3 data-cz="Start, One page" data-en="Start, One page">Start, One page</h3>
+          <p class="price" data-cz="od 9 900 Kč" data-en="from 9,900 CZK">od 9 900 Kč</p>
+          <p class="price-sub"
+             data-cz="Pro kavárnu, barber, službu, osobní brand."
+             data-en="For cafés, barbers, services, personal brands.">
+            Pro kavárnu, barber, službu, osobní brand.
+          </p>
+        </div>
+
+        <ul class="price-list">
+          <li data-cz="5 až 8 sekcí, moderní design" data-en="5 to 8 sections, modern design">5 až 8 sekcí, moderní design</li>
+          <li data-cz="Mobilní menu, základní interakce" data-en="Mobile menu, basic interactions">Mobilní menu, základní interakce</li>
+          <li data-cz="Kontakt, mapa, CTA" data-en="Contact, map, CTAs">Kontakt, mapa, CTA</li>
+          <li data-cz="SEO basic (title, meta, OG), nasazení" data-en="SEO basics (title, meta, OG), deployment">SEO basic (title, meta, OG), nasazení</li>
+        </ul>
+
+        <a class="btn price-cta" href="#contact"
+           data-package="Start"
+           data-cz="Chci Start"
+           data-en="I want Start"
+        >
+          Chci Start
+        </a>
+      </article>
+
+      
+      <article class="price-card featured reveal">
+
+
+        <div class="price-top">
+          <h3 data-cz="Standard, do 5 stránek" data-en="Standard, up to 5 pages">Standard, do 5 stránek</h3>
+          <p class="price" data-cz="od 16 900 Kč" data-en="from 16,900 CZK">od 16 900 Kč</p>
+          <p class="price-sub"
+             data-cz="Více prostoru pro texty, lepší důvěryhodnost."
+             data-en="More room for content, stronger trust and structure.">
+            Více prostoru pro texty, lepší důvěryhodnost.
+          </p>
+        </div>
+
+        <ul class="price-list">
+          <li data-cz="Home + O nás + Služby nebo Menu + Galerie + Kontakt"
+              data-en="Home + About + Services or Menu + Gallery + Contact">
+            Home + O nás + Služby nebo Menu + Galerie + Kontakt
+          </li>
+          <li data-cz="Lepší SEO struktura, víc prostoru pro obsah"
+              data-en="Better SEO structure, more space for content">
+            Lepší SEO struktura, víc prostoru pro obsah
+          </li>
+            <li data-cz="CTA, formulář"
+                data-en="CTAs, form">
+            CTA, formulář
+            </li>
+
+          <li data-cz="Nasazení, rychlost, responzivita"
+              data-en="Deployment, speed, responsiveness">
+            Nasazení, rychlost, responzivita
+          </li>
+        </ul>
+
+        <a class="btn price-cta" href="#contact"
+           data-package="Standard"
+           data-cz="Chci Standard"
+           data-en="I want Standard"
+        >
+          Chci Standard
+        </a>
+      </article>
+
+      <!-- PREMIUM -->
+      <article class="price-card reveal">
+        <div class="price-top">
+          <h3 data-cz="Premium" data-en="Premium">Premium</h3>
+          <p class="price" data-cz="od 29 900 Kč" data-en="from 29,900 CZK">od 29 900 Kč</p>
+          <p class="price-sub"
+             data-cz="Když chceš růst, měřit, automatizovat."
+             data-en="For growth, tracking, and automation.">
+            Když chceš růst, měřit, automatizovat.
+          </p>
+        </div>
+
+        <ul class="price-list">
+          <li data-cz="Vše ze Standardu" data-en="Everything from Standard">Vše ze Standardu</li>
+          <li data-cz="Integrace Rezervace"
+              data-en="Booking integrations">
+            Integrace Rezervace
+          </li>
+          <li data-cz="Pokročilejší formuláře, lepší UX"
+              data-en="Advanced forms, better UX">
+            Pokročilejší formuláře, lepší UX
+          </li>
+            <li data-cz="Základní měření akcí návštěvníků (kliky na CTA, formulář, telefon/email)"
+                data-en="Basic tracking (clicks on CTA, forms, phone/email clicks)">
+            Základní měření akcí návštěvníků (kliky na CTA, formulář, telefon/email)
+            </li>
+        </ul>
+
+        <a class="btn price-cta" href="#contact"
+           data-package="Premium"
+           data-cz="Chci Premium"
+           data-en="I want Premium"
+        >
+          Chci Premium
+        </a>
+      </article>
+    </div>
+
+    <p class="pricing-note reveal"
+       data-cz="Poznámka: doména, hosting a placené služby (např. rezervace) jsou obvykle zvlášť."
+       data-en="Note: domain, hosting, and paid third party tools (like booking) are usually separate.">
+      Poznámka: doména, hosting a placené služby (např. rezervace) jsou obvykle zvlášť.
+    </p>
+  </div>
+</section>
+
 
 
 
@@ -344,6 +500,9 @@
                                 data-en-placeholder="Tell me what you need, timeline, budget, goal..."></textarea>
                         </label>
 
+                        <input type="hidden" name="package" id="selected-package" value="">
+
+
                         <button class="btn submit" type="submit" data-cz="Odeslat" data-en="Send">Odeslat</button>
 
                         <p class="contact-note"
@@ -429,6 +588,22 @@
         </div>
     </footer>
 
+
+
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <div class="cookie-banner__content">
+    <p class="cookie-banner__text"
+       data-cz="Používám cookies pro měření návštěvnosti. Můžeš je přijmout nebo odmítnout."
+       data-en="I use cookies for analytics. You can accept or reject them.">
+      Používám cookies pro měření návštěvnosti. Můžeš je přijmout nebo odmítnout.
+    </p>
+
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn" data-cookie-accept data-cz="Přijmout" data-en="Accept">Přijmout</button>
+      <button type="button" class="btn-outline" data-cookie-reject data-cz="Odmítnout" data-en="Reject">Odmítnout</button>
+    </div>
+  </div>
+</div>
 
 
 

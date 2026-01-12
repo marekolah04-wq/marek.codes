@@ -1,3 +1,4 @@
+//lang switch
 const langBtn = document.getElementById("lang-switch")
 let currentLang = localStorage.getItem("preferredLang") || "cz";
 
@@ -33,7 +34,63 @@ if (langBtn) {
   });
 }
 
-/* copy mail */
+
+//COOKIES ------------------------------------------------------------------
+const trackEvent = (name, params = {}) => {
+  if (typeof gtag !== "function") return;
+  gtag("event", name, params);
+};
+
+const updateConsent = (status) => {
+  if (typeof gtag !== "function") return;
+
+  const value = status === "granted" ? "granted" : "denied";
+  gtag("consent", "update", {
+    analytics_storage: value,
+    ad_storage: value,
+    ad_user_data: value,
+    ad_personalization: value
+  });
+};
+
+const getCopyWhere = (el) => {
+  if (!el) return "unknown";
+  if (el.closest("footer")) return "footer";
+  if (el.closest(".thanks-page")) return "thanks";
+  if (el.closest("#contact")) return "contact";
+  if (el.closest(".project-detail")) return "project";
+  return "unknown";
+};
+
+/* BANNER */
+(function cookieConsentInit() {
+  const banner = document.getElementById("cookie-banner");
+  if (!banner) return;
+
+  const stored = localStorage.getItem("cookieConsent_v1");
+  if (stored === "granted" || stored === "denied") {
+    updateConsent(stored);
+    banner.style.display = "none";
+    return;
+  }
+
+  const acceptBtn = banner.querySelector("[data-cookie-accept]");
+  const rejectBtn = banner.querySelector("[data-cookie-reject]");
+
+  const setChoice = (value) => {
+    localStorage.setItem("cookieConsent_v1", value);
+    updateConsent(value);
+    banner.style.display = "none";
+    trackEvent("cookie_consent", { value });
+  };
+
+  if (acceptBtn) acceptBtn.addEventListener("click", () => setChoice("granted"));
+  if (rejectBtn) rejectBtn.addEventListener("click", () => setChoice("denied"));
+})();
+//------------------------------------------------
+
+
+//copy mail
 (function copyEmailInit() {
   const nodes = document.querySelectorAll("[data-copy-email]");
   if (!nodes.length) return;
@@ -74,12 +131,66 @@ if (langBtn) {
           fallbackCopy(email);
         }
         flash(el, "Zkopírováno", "Copied");
+        trackEvent("copy_email", { where: getCopyWhere(el) });
       } catch (err) {
         console.warn("Copy failed:", err);
-        flash(el, email, email); 
+        flash(el, email, email);
       }
     });
   });
 })();
+
+
+
+
+// PRICING 
+document.addEventListener("DOMContentLoaded", () => {
+  const packageInput = document.getElementById("selected-package");
+  const messageField = document.querySelector('textarea[name="message"]');
+
+  document.querySelectorAll("[data-package]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const chosen = btn.dataset.package;
+
+      sessionStorage.setItem("selectedPackage", chosen);
+      trackEvent("pricing_cta_click", { package: chosen });
+
+      if (packageInput) packageInput.value = chosen;
+
+      if (messageField && !/^(Balíček|Package):/m.test(messageField.value)) {
+        const label = currentLang === "en" ? "Package" : "Balíček";
+        messageField.value = `${label}: ${chosen}\n` + messageField.value;
+      }
+    });
+  });
+});
+
+
+/* form */
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector('form[name="contact"]');
+  if (!form) return;
+
+  form.addEventListener("submit", () => {
+    sessionStorage.setItem("leadPending", "1");
+  });
+});
+
+
+//thanks event
+
+(function leadTrackingInit() {
+  if (!window.location.pathname.toLowerCase().includes("thanks.html")) return;
+
+  const pending = sessionStorage.getItem("leadPending");
+  if (!pending) return;
+
+  const selectedPackage = sessionStorage.getItem("selectedPackage") || "";
+  trackEvent("generate_lead", { method: "netlify_form", package: selectedPackage });
+
+  sessionStorage.removeItem("leadPending");
+})();
+
+
 
 

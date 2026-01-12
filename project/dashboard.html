@@ -3,7 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Interaktivní Dashboard | marek.codes">
+    <meta property="og:description" content="Mini dashboard: počasí, svátky, přepínání motivu, výběr města.">
+    <meta property="og:url" content="https://marek.codes/project/dashboard.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://marek.codes/assets/img/og-img.png">
+
+
   <title>Inetraktivní Dashboard , Projekt | marek.codes</title>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQL4NTPRN0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // default consent = denied (dokud user neklikne)
+    gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+    });
+
+    gtag('js', new Date());
+    gtag('config', 'G-PQL4NTPRN0', { anonymize_ip: true });
+    </script>
+
+
 
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/navbar.css">
@@ -11,10 +40,14 @@
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/queries.css">
 
+  <link rel="icon" href="/assets/icons/favicon.png">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
   </style>
 </head>
+
+
 <body>
 
     <header id="navbar">
@@ -27,12 +60,13 @@
 
         <nav class="nav-menu">
         <ul>
-            <li><a href="../index.html#projects">Projekty</a></li>
-            <li><a href="../index.html#services">Služby</a></li>
-            <li><a href="../index.html#about">O mně</a></li>
-            <li><a href="../index.html#contact">Kontakt</a></li>
-            <li><button id="lang-switch">CZ / EN</button></li>
-        </ul>
+                    <li><a href="../index.html#projects">Projekty</a></li>
+                    <li><a href="../index.html#services">Služby</a></li>
+                    <li><a href="../#pricing" data-cz="Ceník" data-en="Pricing">Ceník</a></li>
+                    <li><a href="../index.html#about">O mně</a></li>
+                    <li><a href="../index.html#contact">Kontakt</a></li>
+                    <li><button id="lang-switch">CZ / EN</button></li>
+                </ul>
         </nav>
     </div>
     </header>
@@ -80,7 +114,7 @@
 
           <a class="btn-outline" href="../index.html#contact"
              data-cz="Chci podobný web"
-             data-en="I want a similar website"></a>
+             data-en="I want one like this"></a>
         </div>
 
         <div class="detail-section">
@@ -137,7 +171,10 @@
             </nav>
 
             <div class="footer-meta">
-                <a href="mailto:marekolah04@gmail.com" class="footer-cta" data-cz="Napiš mi" data-en="Email me">Napiš mi</a>
+                <button type="button" class="copy-email" data-copy-email="marekolah04@gmail.com"
+                    data-cz="marekolah04@gmail.com" data-en="marekolah04@gmail.com">
+                    marekolah04@gmail.com
+                </button>
 
                 <small data-cz="© 2026 Marek Oláh. Všechna práva vyhrazena." data-en="© 2026 Marek. All rights reserved.">
                     © 2026 Marek. Všechna práva vyhrazena.
@@ -165,6 +202,21 @@
         </div>
     </footer>
 
+
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <div class="cookie-banner__content">
+    <p class="cookie-banner__text"
+       data-cz="Používám cookies pro měření návštěvnosti. Můžeš je přijmout nebo odmítnout."
+       data-en="I use cookies for analytics. You can accept or reject them.">
+      Používám cookies pro měření návštěvnosti. Můžeš je přijmout nebo odmítnout.
+    </p>
+
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn" data-cookie-accept data-cz="Přijmout" data-en="Accept">Přijmout</button>
+      <button type="button" class="btn-outline" data-cookie-reject data-cz="Odmítnout" data-en="Reject">Odmítnout</button>
+    </div>
+  </div>
+</div>
 
 
 
