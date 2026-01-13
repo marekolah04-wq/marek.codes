@@ -87,4 +87,26 @@
   outline-offset: 2px;
 }
 
+.footer-links .footer-link-btn,
+.footer-links a {
+  color: rgba(255,255,255,0.85);
+}
+
+.footer-links .footer-link-btn:hover,
+.footer-links a:hover {
+  color: var(--color-accent);
+}
+
+.footer-links .footer-link-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  text-transform: none;
+}
+
+
 

@@ -67,26 +67,43 @@ const getCopyWhere = (el) => {
   const banner = document.getElementById("cookie-banner");
   if (!banner) return;
 
-  const stored = localStorage.getItem("cookieConsent_v1");
-  if (stored === "granted" || stored === "denied") {
-    updateConsent(stored);
-    banner.style.display = "none";
-    return;
-  }
-
   const acceptBtn = banner.querySelector("[data-cookie-accept]");
   const rejectBtn = banner.querySelector("[data-cookie-reject]");
+  const settingsBtn = document.querySelector("[data-cookie-settings]");
+
+  const hide = () => { banner.style.display = "none"; };
+  const show = () => { banner.style.display = ""; };
 
   const setChoice = (value) => {
     localStorage.setItem("cookieConsent_v1", value);
     updateConsent(value);
-    banner.style.display = "none";
+    hide();
     trackEvent("cookie_consent", { value });
   };
 
   if (acceptBtn) acceptBtn.addEventListener("click", () => setChoice("granted"));
   if (rejectBtn) rejectBtn.addEventListener("click", () => setChoice("denied"));
+
+  // nastavení cookies ve footeru
+  if (settingsBtn) {
+    settingsBtn.addEventListener("click", () => {
+      localStorage.removeItem("cookieConsent_v1");
+      updateConsent("denied");
+      show();
+      trackEvent("cookie_settings_open");
+    });
+  }
+
+  // initial state
+  const stored = localStorage.getItem("cookieConsent_v1");
+  if (stored === "granted" || stored === "denied") {
+    updateConsent(stored);
+    hide();
+  } else {
+    show();
+  }
 })();
+
 //------------------------------------------------
 
 

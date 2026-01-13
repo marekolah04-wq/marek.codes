@@ -64,10 +64,10 @@
 }
 
 .price-cta {
-  margin-top: 1.6rem;
   width: 100%;
-  justify-content: center;
+  text-transform: uppercase;
 }
+
 
 /* responsive */
 @media (max-width: 900px) {
