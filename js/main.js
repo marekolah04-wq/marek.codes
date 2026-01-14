@@ -84,7 +84,7 @@ const getCopyWhere = (el) => {
   if (acceptBtn) acceptBtn.addEventListener("click", () => setChoice("granted"));
   if (rejectBtn) rejectBtn.addEventListener("click", () => setChoice("denied"));
 
-  // nastavení cookies ve footeru
+  // cookies footer
   if (settingsBtn) {
     settingsBtn.addEventListener("click", () => {
       localStorage.removeItem("cookieConsent_v1");

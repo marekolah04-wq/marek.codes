@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marek.codes/sitemap.xml
+Sitemap: https://marek-codes.cz/sitemap.xml

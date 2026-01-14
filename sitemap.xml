@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://marek.codes/</loc>
+    <loc>https://marek-codes.cz/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://marek.codes/project/offset-coffee.html</loc>
+    <loc>https://marek-codes.cz/project/offset-coffee</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://marek.codes/project/fitness-coaching.html</loc>
+    <loc>https://marek-codes.cz/project/fitness-coaching</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://marek.codes/project/dashboard.html</loc>
+    <loc>https://marek-codes.cz/project/dashboard</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

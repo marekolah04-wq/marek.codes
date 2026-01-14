@@ -1,0 +1,13 @@
+# Force apex + https (canonical domain = https://marek-codes.cz)
+
+/*  https://marek-codes.cz/:splat  301!  force=true
+
+# Pretty URLs -> .html files
+/project/offset-coffee        /project/offset-coffee.html        301
+/project/fitness-coaching     /project/fitness-coaching.html     301
+/project/dashboard            /project/dashboard.html            301
+/privacy                      /privacy.html                      301
+/thanks                       /thanks.html                       301
+
+
+
