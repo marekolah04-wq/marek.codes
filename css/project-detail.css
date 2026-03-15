@@ -105,8 +105,8 @@
 }
 
 .actions a {
-  flex: 1 1 180px;      /* dva vedle sebe, ale když je málo místa, tak se zalomí */
-  min-width: 0;         /* důležitý proti přetékání */
+  flex: 1 1 180px;      
+  min-width: 0;         
   max-width: 100%;
   box-sizing: border-box;
 }
