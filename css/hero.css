@@ -10,7 +10,7 @@
 }
 
 #hero .section-card {
-  padding: 7rem 9rem;
+  padding: 6rem 8rem;
 }
 
 .hero-content {
@@ -24,15 +24,18 @@
 
 
 #hero h1 {
-    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    font-size: clamp(2.6rem, 5.5vw, 3.3rem);
     letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
 }
 
 #hero p {
-    max-width: 680px;
-    font-size: 1.2rem;
+    max-width: 810px;
+    font-size: 1.4rem;
     margin-bottom: 2.5rem;
-    color: var(--color-secondary); 
+    margin-top: 0;
+    color: #e6e6e6; 
+    line-height: 1.6;
 }
 
 .hero-buttons {
@@ -40,7 +43,7 @@
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    margin-top: 1.8rem
 }
 
 .hero-buttons .btn {
