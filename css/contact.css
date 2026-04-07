@@ -71,6 +71,45 @@
   box-shadow: 0 0 0 6px rgba(77,171,247,0.10);
 }
 
+
+.form-consent {
+  margin: 1rem 0 0.75rem;
+}
+
+.form-consent label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  cursor: pointer;
+  color: var(--color-secondary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.form-consent input[type="checkbox"] {
+  margin-top: 0.18rem;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  accent-color: #4dabf7;
+  cursor: pointer;
+  padding: 0;
+}
+
+.form-consent .consent-text {
+  display: inline;
+}
+
+.form-consent a {
+  color: #4dabf7;
+  text-decoration: none;
+}
+
+.form-consent a:hover {
+  text-decoration: underline;
+}
+
+
 .submit {
   margin-top: 0.5rem;
   width: 100%;

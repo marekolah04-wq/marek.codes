@@ -538,10 +538,29 @@
                                 data-en-placeholder="Tell me what you need, timeline, budget, goal..."></textarea>
                         </label>
 
+
+            <div class="form-consent">
+            <label for="privacy-consent">
+                <input type="checkbox" id="privacy-consent" name="privacy-consent" required>
+                <span class="consent-text">
+                <span data-cz="Souhlasím se zpracováním osobních údajů dle "
+                        data-en="I agree to the processing of personal data according to the ">
+                    Souhlasím se zpracováním osobních údajů dle
+                </span>
+                <a href="/privacy"
+                    data-cz="zásad ochrany osobních údajů"
+                    data-en="privacy policy">
+                    zásad ochrany osobních údajů
+                </a>.
+                </span>
+            </label>
+            </div>
+
                         <input type="hidden" name="package" id="selected-package" value="">
 
 
                         <button class="btn submit" type="submit" data-cz="Odeslat" data-en="Send">Odeslat</button>
+
 
                         <p class="contact-note"
                             data-cz="Tip: Pokud nemáte jasno, napište jen co nejvíc informací, já to poskládám."
