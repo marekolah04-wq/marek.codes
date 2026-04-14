@@ -25,16 +25,6 @@
 
 @media (max-width: 768px) {
 
-  /* HERO */
-  #hero .section-card {
-    padding: 3rem 2rem;
-    margin-top: 1rem;
-  }
-
-  #hero p {
-    font-size: 1.05rem;
-  }
-
   /* NAV */
   .nav-toggle {
     display: flex;
@@ -243,10 +233,15 @@
 @media (max-width: 768px) {
   .footer-inner {
     grid-template-columns: 1fr;
+    text-align: center;
   }
 
   .footer-meta {
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .footer-links .footer-link-btn {
+    text-align: center;
   }
 }
 
