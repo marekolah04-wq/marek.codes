@@ -1,19 +1,24 @@
 function initAnimations() {
-  // HERO SECTION -------------------------------------------------
-  const heroElements = document.querySelectorAll(".hero-content > *");
+  // HERO INTRO
+  const heroCopyElements = document.querySelectorAll(
+    ".hero-copy h1, .hero-copy p, .hero-point, .hero-buttons"
+  );
 
-  heroElements.forEach((el, i) => {
-    el.style.opacity = 0;
-    el.style.transform = "translateY(30px)";
+  const heroProjects = document.querySelectorAll(".hero-project");
 
+  heroCopyElements.forEach((el, i) => {
     setTimeout(() => {
-      el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-      el.style.opacity = 1;
-      el.style.transform = "translateY(0)";
-    }, i * 200);
+      el.classList.add("hero-visible");
+    }, 120 + i * 120);
   });
 
-  /* projects */
+  heroProjects.forEach((el, i) => {
+    setTimeout(() => {
+      el.classList.add("hero-visible");
+    }, 450 + i * 140);
+  });
+
+  // SCROLL REVEAL
   const revealEls = document.querySelectorAll(".project-card, .service-card, .reveal");
 
   if (!revealEls.length) return;
@@ -24,7 +29,6 @@ function initAnimations() {
         if (!entry.isIntersecting) return;
 
         entry.target.classList.add("visible");
-
         observer.unobserve(entry.target);
       });
     },

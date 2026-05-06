@@ -199,9 +199,17 @@
   width: 82%;
   left: 6%;
   top: 22%;
-  transform: rotate(-6deg);
+  transform: rotate(-6deg) translateY(28px) scale(0.96);
   z-index: 5;
-  animation: heroFloatMain 7s ease-in-out infinite;
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hero-project--main.hero-visible {
+  animation: heroFloatMain 7s ease-in-out infinite 0.9s;
 }
 .hero-project--main:hover {
   z-index: 6;
@@ -211,28 +219,84 @@
   width: 70%;
   right: 4%;
   top: -10%;
-  transform: rotate(9deg);
+  transform: rotate(9deg) translateY(28px) scale(0.96);
   z-index: 4;
-  animation: heroFloatSecond 6.5s ease-in-out infinite;
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hero-project--second.hero-visible {
+  animation: heroFloatSecond 6.5s ease-in-out infinite 0.9s;
 }
 .hero-project--second:hover {
-  z-index: 6;;
+  z-index: 6;
 }
+
 
 .hero-project--third {
   width: 62%;
   right: 14%;
   top: 61%;
-  transform: rotate(5deg);
+  transform: rotate(5deg) translateY(28px) scale(0.96);
   z-index: 3;
-  animation: heroFloatThird 7.8s ease-in-out infinite;
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
+
+.hero-project--third.hero-visible {
+  animation: heroFloatThird 7.8s ease-in-out infinite 0.9s;
+}
+
 .hero-project--third:hover {
   z-index: 6;
 }
 
 
 
+.hero-copy h1,
+.hero-copy p,
+.hero-point,
+.hero-buttons {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+}
+
+.hero-project {
+  opacity: 0;
+  transform: translateY(28px) scale(0.96);
+}
+
+.hero-copy h1.hero-visible,
+.hero-copy p.hero-visible,
+.hero-point.hero-visible,
+.hero-buttons.hero-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-project--main.hero-visible {
+  opacity: 1;
+  transform: rotate(-6deg) translateY(0) scale(1);
+}
+
+.hero-project--second.hero-visible {
+  opacity: 1;
+  transform: rotate(9deg) translateY(0) scale(1);
+}
+
+.hero-project--third.hero-visible {
+  opacity: 1;
+  transform: rotate(5deg) translateY(0) scale(1);
+}
 
 
 
@@ -266,9 +330,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-project--main,
-  .hero-project--second,
-  .hero-project--third {
+  .hero-copy h1,
+  .hero-copy p,
+  .hero-point,
+  .hero-buttons,
+  .hero-project {
+    opacity: 1;
+    transform: none;
+    transition: none;
     animation: none;
   }
 
