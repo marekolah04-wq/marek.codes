@@ -52,21 +52,6 @@
   color: var(--color-secondary);
 }
 
-.about-tags {
-  margin-top: 1.2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.tag {
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.03);
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.85);
-}
 
 .about-points {
   display: grid;
