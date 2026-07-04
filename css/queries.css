@@ -133,7 +133,7 @@
   }
 
   .project-image img {
-    height: 180px;
+    height: auto;
   }
 
   .projects-grid {
@@ -244,4 +244,7 @@
     text-align: center;
   }
 }
+
+
+
 

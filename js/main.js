@@ -210,4 +210,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+/* CAROUSEL */
+const projectsCarousel = document.querySelector("[data-projects-carousel]");
 
+if (projectsCarousel) {
+  const track = projectsCarousel.querySelector("[data-project-track]");
+  const cards = Array.from(projectsCarousel.querySelectorAll(".project-card"));
+  const prevButton = projectsCarousel.querySelector("[data-project-prev]");
+  const nextButton = projectsCarousel.querySelector("[data-project-next]");
+  const dots = Array.from(projectsCarousel.querySelectorAll("[data-project-dot]"));
+
+  let activeIndex = 0;
+
+  const updateActiveUI = () => {
+    cards.forEach((card, cardIndex) => {
+      card.classList.toggle("is-active", cardIndex === activeIndex);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("active", dotIndex === activeIndex);
+    });
+  };
+
+  const goToProject = (index) => {
+    if (!track || !cards.length) return;
+
+    if (index < 0) {
+      activeIndex = cards.length - 1;
+    } else if (index >= cards.length) {
+      activeIndex = 0;
+    } else {
+      activeIndex = index;
+    }
+
+    cards[activeIndex].scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center"
+    });
+
+    updateActiveUI();
+  };
+
+  prevButton?.addEventListener("click", () => {
+    goToProject(activeIndex - 1);
+  });
+
+  nextButton?.addEventListener("click", () => {
+    goToProject(activeIndex + 1);
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      goToProject(index);
+    });
+  });
+
+  track?.addEventListener("scroll", () => {
+    const trackCenter = track.scrollLeft + track.clientWidth / 2;
+
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    cards.forEach((card, index) => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const distance = Math.abs(trackCenter - cardCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    activeIndex = closestIndex;
+    updateActiveUI();
+  });
+
+  updateActiveUI();
+}

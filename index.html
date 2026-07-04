@@ -68,6 +68,7 @@
     <link rel="stylesheet" href="/css/contact.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/queries.css">
+    <link rel="stylesheet" href="/css/carousel.css">
 
     <link rel="icon" href="/assets/icons/favicon.png">
 </head>
@@ -152,21 +153,21 @@
             </div>
 
             <div class="hero-visual" aria-hidden="true">
-                <a href="/project/zednictvi-kravciv.html" class="hero-project hero-project--main">
+                <a href="#projects" class="hero-project hero-project--main">
                     <img src="/assets/img/project-3.webp" alt="">
                     <div class="hero-project__meta">
                         <span>Zednictví Kravciv</span>
                     </div>
                 </a>
  
-                <a href="/project/bite-me.html" class="hero-project hero-project--second">
+                <a href="#projects" class="hero-project hero-project--second">
                     <img src="/assets/img/project-1.webp" alt="">
                     <div class="hero-project__meta">
                         <span>Bite Me Burgers</span>
                     </div>
                 </a>
 
-                <a href="/project/mp-doors.html" class="hero-project hero-project--third">
+                <a href="#projects" class="hero-project hero-project--third">
                     <img src="/assets/img/project-2.webp" alt="">
                     <div class="hero-project__meta">
                         <span>MP DOORS</span>
@@ -189,78 +190,157 @@
                     Weby navržené s důrazem na přehlednost a profesionální dojem.
                 </p>
             </div>
+<div class="projects-carousel" data-projects-carousel>
 
-            <div class="projects-grid">
+    <button 
+        class="projects-arrow projects-arrow--prev" 
+        type="button" 
+        data-project-prev
+        aria-label="Předchozí projekt"
+        data-cz-aria="Předchozí projekt"
+        data-en-aria="Previous project"
+    >
+        ‹
+    </button>
+
+    <div class="projects-grid" data-project-track>
+
+        <article class="project-card">
+            <a href="/project/zednictvi-kravciv.html" class="project-link">
+                <div class="project-image">
+                    <img 
+                        src="/assets/img/project-3-full.webp" 
+                        alt="Full page screenshot webu Zednictví Kravciv"
+                        data-cz-alt="Full page screenshot webu Zednictví Kravciv"
+                        data-en-alt="Full page screenshot of the Zednictví Kravciv website"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <div class="project-overlay">
+                        <p 
+                            data-cz="Web pro rekonstrukce, služby, ukázky realizací a jednoduché odeslání poptávky."
+                            data-en="A website for renovations, services, completed work, and simple inquiry submission."
+                        >
+                            Web pro rekonstrukce, služby, ukázky realizací a jednoduché odeslání poptávky.
+                        </p>
+
+                        <span 
+                            class="project-detail-link"
+                            data-cz="Zobrazit detail"
+                            data-en="View detail"
+                        >
+                            Zobrazit detail
+                        </span>
+                    </div>
+                </div>
+
+                <div class="project-content">
+                    <h3 data-cz="🧱 Zednictví Kravciv" data-en="🧱 Zednictví Kravciv">
+                        🧱 Zednictví Kravciv
+                    </h3>
+                </div>
+            </a>
+        </article>
 
 
+        <article class="project-card">
+            <a href="/project/bite-me.html" class="project-link">
+                <div class="project-image">
+                    <img 
+                        src="/assets/img/project-1-full.webp" 
+                        alt="Full page screenshot webu Bite Me Burgers"
+                        data-cz-alt="Full page screenshot webu Bite Me Burgers"
+                        data-en-alt="Full page screenshot of the Bite Me Burgers website"
+                        loading="lazy"
+                        decoding="async"
+                    >
 
-                                <article class="project-card">
-                    <a href="/project/zednictvi-kravciv.html" class="project-link">
+                    <div class="project-overlay">
+                        <p 
+                            data-cz="Web pro burger stánek s menu, lokací, kontakty a rychlou orientací na mobilu."
+                            data-en="A website for a burger stand with a menu, location, contact details, and fast mobile orientation."
+                        >
+                            Web pro burger stánek s menu, lokací, kontakty a rychlou orientací na mobilu.
+                        </p>
 
-                        <div class="project-image">
-                            <img src="/assets/img/project-3.webp" alt="Zednictví Kravciv" loading="lazy"
-                                decoding="async">
-                        </div>
+                        <span 
+                            class="project-detail-link"
+                            data-cz="Zobrazit detail"
+                            data-en="View detail"
+                        >
+                            Zobrazit detail
+                        </span>
+                    </div>
+                </div>
 
-                        <div class="project-content">
-                            <h3 data-cz="Zednictví Kravciv" data-en="Zednictví Kravciv">Zednictví Kravciv
-                            </h3>
-                            <p data-cz="Web zaměřený na jasnou prezentaci služeb, ukázky realizací a jednoduché odeslání poptávky. Důraz byl na důvěryhodnost, přehlednost a rychlou orientaci návštěvníka."
-
-                                data-en="A website focused on clearly presenting services, showcasing completed projects, and making inquiries simple. The focus was on trust, clarity, and fast visitor orientation.">
-
-                                Web zaměřený na jasnou prezentaci služeb, ukázky realizací a jednoduché odeslání poptávky. Důraz byl na důvěryhodnost, přehlednost a rychlou orientaci návštěvníka.
-                            </p>
-                            <span class="project-cta" data-cz="Detail →" data-en="Detail →">Detail →
-                                </span>
-                        </div>
-                    </a>
-                </article>
+                <div class="project-content">
+                    <h3 data-cz="🍔 Bite Me Burgers" data-en="🍔 Bite Me Burgers">
+                        🍔 Bite Me Burgers
+                    </h3>
+                </div>
+            </a>
+        </article>
 
 
+        <article class="project-card">
+            <a href="/project/mp-doors.html" class="project-link">
+                <div class="project-image">
+                    <img 
+                        src="/assets/img/project-2-full.webp" 
+                        alt="Full page screenshot webu MP DOORS"
+                        data-cz-alt="Full page screenshot webu MP DOORS"
+                        data-en-alt="Full page screenshot of the MP DOORS website"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <div class="project-overlay">
+                        <p 
+                            data-cz="Firemní web pro prezentaci služeb, realizací, partnerů a rychlý kontakt."
+                            data-en="A company website presenting services, completed work, partners, and quick contact."
+                        >
+                            Firemní web pro prezentaci služeb, realizací, partnerů a rychlý kontakt.
+                        </p>
+
+                        <span 
+                            class="project-detail-link"
+                            data-cz="Zobrazit detail"
+                            data-en="View detail"
+                        >
+                            Zobrazit detail
+                        </span>
+                    </div>
+                </div>
                 
-                                <article class="project-card">
-                    <a href="/project/bite-me.html" class="project-link">
+                <div class="project-content">
+                    <h3 data-cz="🚪 MP DOORS" data-en="🚪 MP DOORS">
+                        🚪 MP DOORS
+                    </h3>
+                </div>
+            </a>
+        </article>
 
-                        <div class="project-image">
-                            <img src="/assets/img/project-1.webp" alt="Bite Me Burgers, náhled webu" loading="lazy" decoding="async">
-                        </div>
+    </div>
 
-                        <div class="project-content">
-                            <h3 data-cz="Bite Me Burgers" data-en="Bite Me Burgers">Bite Me Burgers</h3>
-                            <p data-cz="Cílem bylo rychle ukázat menu, lokaci a atmosféru značky, hlavně pro návštěvníky na mobilu. Web je navržený tak, aby byly důležité informace jasné během pár sekund."
-                                data-en="The goal was to quickly showcase the menu, location, and brand atmosphere, especially for mobile visitors. The website is designed to make key information clear within seconds.">
-                                Cílem bylo rychle ukázat menu, lokaci a atmosféru značky, hlavně pro návštěvníky na mobilu. Web je navržený tak, aby byly důležité informace jasné během pár sekund.
-                            </p>
-                            <span class="project-cta" data-cz="Detail →" data-en="Detail →">Detail →
-                                </span>
-                        </div>
-                    </a>
-                </article>
+    <button 
+        class="projects-arrow projects-arrow--next" 
+        type="button" 
+        data-project-next
+        aria-label="Další projekt"
+        data-cz-aria="Další projekt"
+        data-en-aria="Next project"
+    >
+        ›
+    </button>
 
+    <div class="projects-dots" data-project-dots aria-label="Přepínání projektů">
+        <button class="project-dot active" type="button" data-project-dot="0" aria-label="Projekt 1"></button>
+        <button class="project-dot" type="button" data-project-dot="1" aria-label="Projekt 2"></button>
+        <button class="project-dot" type="button" data-project-dot="2" aria-label="Projekt 3"></button>
+    </div>
 
-                <article class="project-card">
-                    <a href="/project/mp-doors.html" class="project-link">
-
-                        <div class="project-image">
-                            <img src="/assets/img/project-2.webp" alt="MP DOORS" loading="lazy"
-                                decoding="async">
-                        </div>
-
-                        <div class="project-content">
-                            <h3 data-cz="MP DOORS" data-en="MP DOORS">MP DOORS</h3>
-                            <p data-cz="Web navržený pro přehlednou prezentaci služeb, realizací a jednodušší kontakt pro nové zákazníky i firmy. Důraz byl na profesionální dojem, čistý layout a jasnou strukturu obsahu."
-                                data-en="A website designed to clearly present services, completed projects, and make contacting the company easier for both new customers and businesses. The focus was on a professional feel, clean layout, and clear content structure.">
-                                Web navržený pro přehlednou prezentaci služeb, realizací a jednodušší kontakt pro nové zákazníky i firmy. Důraz byl na profesionální dojem, čistý layout a jasnou strukturu obsahu.
-                            </p>
-                            <span class="project-cta" data-cz="Detail →" data-en="Detail →">Detail →
-                                </span>
-                        </div>
-                    </a>
-                </article>
-
-            </div>
-        </div>
+</div>
     </section>
 
 
