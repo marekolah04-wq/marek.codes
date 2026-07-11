@@ -1,3 +1,16 @@
+/* .project-meta--clean .project-title {
+  font-size: clamp(2.05rem, 3.6vw, 3rem);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+}
+
+.project-section-heading h2,
+.project-bottom-cta h2 {
+  font-weight: 750;
+  letter-spacing: -0.04em;
+} */
+
 .project-detail {
     padding: 8rem 0.5rem;
     z-index: 0;
@@ -452,7 +465,7 @@
     transition: none;
   }
 }
-¨
+
 
 
 
