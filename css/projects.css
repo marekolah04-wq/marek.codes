@@ -139,7 +139,7 @@
   border-radius: 18px;
   background: rgba(8, 11, 20, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.11);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(5px);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
   transform: translateY(calc(100% + 1.5rem));
   opacity: 0;
@@ -287,7 +287,7 @@
 
   .project-detail-link::after {
     opacity: 1;
-    transform: translateX(3px);
+    transform: translateX(0);
   }
 }
 
