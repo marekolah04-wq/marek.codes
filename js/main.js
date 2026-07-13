@@ -12,6 +12,23 @@ const updateLanguage = () => {
     const value = el.dataset[`${currentLang}Placeholder`];
     if (value) el.setAttribute("placeholder", value);
   });
+
+    document.querySelectorAll("[data-cz-title]").forEach((el) => {
+    const value = el.dataset[`${currentLang}Title`];
+
+    if (value) {
+      el.setAttribute("title", value);
+      el.setAttribute("aria-label", value);
+    }
+  });
+
+  if (langBtn) {
+    langBtn.textContent = currentLang === "cz" ? "CZ / EN" : "EN / CZ";
+    langBtn.setAttribute(
+      "aria-label",
+      currentLang === "cz" ? "Přepnout do angličtiny" : "Switch to Czech"
+    );
+  }
   
   localStorage.setItem("preferredLang", currentLang)
 };
