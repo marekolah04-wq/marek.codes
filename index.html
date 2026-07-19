@@ -615,94 +615,236 @@
 
 
 
-    <section id="contact">
+    <section id="contact" aria-labelledby="contact-title">
         <div class="container">
-            <div class="contact-header reveal">
-                <h2 data-cz="Kontakt" data-en="Contact">Kontakt</h2>
-                <p data-cz="Stačí pár vět o tom, co potřebujete. Ozvu se a navrhnu další postup."
-                    data-en="A few lines about what you need are enough. I’ll get back to you with the next steps.">
-                    Stačí pár vět o tom, co potřebujete. Ozvu se a navrhnu další postup.
-                </p>
-            </div>
+            <div class="contact-panel reveal">
 
-            <div class="contact-grid">
-                <div class="contact-card reveal">
-                    <h3 data-cz="Rychlá zpráva" data-en="Quick message">Rychlá zpráva</h3>
+                <div class="contact-info">
 
+                    <h2 id="contact-title"
+                        data-cz="Pojďme probrat váš web."
+                        data-en="Let’s talk about your website.">
+                        Pojďme probrat váš web.
+                    </h2>
 
-                    <form name="contact" action="/thanks" method="POST" data-netlify="true"
+                    <p class="contact-intro"
+                        data-cz="Nemusíte mít hotové zadání. Stačí mi pár vět o tom, co potřebujete, a společně vymyslíme další postup."
+                        data-en="You don’t need a finished brief. A few lines about what you need are enough, and we’ll figure out the next steps together.">
+                        Nemusíte mít hotové zadání. Stačí mi pár vět o tom, co potřebujete, a společně vymyslíme další postup.
+                    </p>
+
+                    <div class="contact-methods">
+
+                        <div class="contact-method">
+                            <span class="contact-method-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                    <path d="m3 7 9 6 9-6"></path>
+                                </svg>
+                            </span>
+
+                            <div class="contact-method-content">
+                                <span class="contact-method-label"
+                                    data-cz="E-mail"
+                                    data-en="Email">
+                                    E-mail
+                                </span>
+
+                                <button type="button"
+                                    class="contact-method-value contact-email-button"
+                                    data-copy-email="info@marek-codes.cz"
+                                    data-cz="info@marek-codes.cz"
+                                    data-en="info@marek-codes.cz"
+                                    data-cz-title="Zkopírovat e-mail do schránky"
+                                    data-en-title="Copy email to clipboard"
+                                    title="Zkopírovat e-mail do schránky"
+                                    aria-label="Zkopírovat e-mail do schránky">
+                                    info@marek-codes.cz
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <span class="contact-method-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </span>
+
+                            <div class="contact-method-content">
+                                <span class="contact-method-label"
+                                    data-cz="Telefon"
+                                    data-en="Phone">
+                                    Telefon
+                                </span>
+
+                                <a class="contact-method-value"
+                                    href="tel:+420725066516"
+                                    data-cz-title="Zavolat na +420 725 066 516"
+                                    data-en-title="Call +420 725 066 516"
+                                    title="Zavolat na +420 725 066 516"
+                                    aria-label="Zavolat na +420 725 066 516">
+                                    +420&nbsp;725&nbsp;066&nbsp;516
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <span class="contact-method-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"></path>
+                                    <circle cx="12" cy="10" r="2.5"></circle>
+                                </svg>
+                            </span>
+
+                            <div class="contact-method-content">
+                                <span class="contact-method-label"
+                                    data-cz="Lokalita"
+                                    data-en="Location">
+                                    Lokalita
+                                </span>
+
+                                <span class="contact-method-value"
+                                    data-cz="Kdyně, Plzeňský kraj"
+                                    data-en="Kdyně, Pilsen Region">
+                                    Kdyně, Plzeňský kraj
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <span class="contact-method-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M12 7v5l3 2"></path>
+                                </svg>
+                            </span>
+
+                            <div class="contact-method-content">
+                                <span class="contact-method-label"
+                                    data-cz="Odezva"
+                                    data-en="Response time">
+                                    Odezva
+                                </span>
+
+                                <span class="contact-method-value"
+                                    data-cz="Obvykle do 24 hodin"
+                                    data-en="Usually within 24 hours">
+                                    Obvykle do 24 hodin
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="contact-form-panel">
+                    <div class="contact-form-header">
+                        <h3 data-cz="Napište mi" data-en="Send me a message">
+                            Napište mi
+                        </h3>
+
+                        <p data-cz="Stačí stručně popsat, co potřebujete. Ozvu se vám s dalším postupem."
+                            data-en="Briefly describe what you need. I’ll get back to you with the next steps.">
+                            Stačí stručně popsat, co potřebujete. Ozvu se vám s dalším postupem.
+                        </p>
+                    </div>
+
+                    <form name="contact"
+                        action="/thanks"
+                        method="POST"
+                        data-netlify="true"
                         netlify-honeypot="bot-field">
+
                         <input type="hidden" name="form-name" value="contact">
 
                         <p class="hidden">
-                            <label>Don’t fill this out: <input name="bot-field"></label>
+                            <label>
+                                Don’t fill this out:
+                                <input type="text"
+                                    name="bot-field"
+                                    autocomplete="off"
+                                    tabindex="-1">
+                            </label>
                         </p>
 
                         <label class="field">
                             <span data-cz="Jméno" data-en="Name">Jméno</span>
-                            <input type="text" name="name" required autocomplete="name" data-cz-placeholder="Jméno"
+
+                            <input type="text"
+                                name="name"
+                                required
+                                autocomplete="name"
+                                data-cz-placeholder="Jméno"
                                 data-en-placeholder="Name">
                         </label>
 
                         <label class="field">
-                            <span data-cz="Email" data-en="Email">Email</span>
-                            <input type="email" name="email" required autocomplete="email" data-cz-placeholder="Email"
+                            <span data-cz="E-mail" data-en="Email">E-mail</span>
+
+                            <input type="email"
+                                name="email"
+                                required
+                                autocomplete="email"
+                                data-cz-placeholder="E-mail"
                                 data-en-placeholder="Email">
                         </label>
 
                         <label class="field">
                             <span data-cz="Zpráva" data-en="Message">Zpráva</span>
-                            <textarea name="message" rows="6" required
-                                placeholder="Napiš mi, co potřebuješ, termín, rozpočet, cíl..."
-                                data-cz-placeholder="Napiš mi, co potřebuješ, termín, rozpočet, cíl..."
-                                data-en-placeholder="Tell me what you need, timeline, budget, goal..."></textarea>
+
+                            <textarea name="message"
+                                rows="6"
+                                required
+                                placeholder="Napište mi, co potřebujete. Nemusíte mít hotové zadání."
+                                data-cz-placeholder="Napište mi, co potřebujete. Nemusíte mít hotové zadání."
+                                data-en-placeholder="Tell me what you need. You don’t need a finished brief."></textarea>
                         </label>
 
+                        <div class="form-consent">
+                            <label>
+                                <input type="checkbox"
+                                    id="privacy-consent"
+                                    name="privacy-consent"
+                                    required>
 
-            <div class="form-consent">
-            <label for="privacy-consent">
-                <input type="checkbox" id="privacy-consent" name="privacy-consent" required>
-                <span class="consent-text">
-                <span data-cz="Souhlasím se zpracováním osobních údajů dle "
-                        data-en="I agree to the processing of personal data according to the ">
-                    Souhlasím se zpracováním osobních údajů dle
-                </span>
-                <a href="/privacy"
-                    data-cz="zásad ochrany osobních údajů"
-                    data-en="privacy policy">
-                    zásad ochrany osobních údajů
-                </a>.
-                </span>
-            </label>
-            </div>
+                                <span class="consent-text">
+                                    <span data-cz="Souhlasím se zpracováním osobních údajů dle "
+                                        data-en="I agree to the processing of personal data according to the ">
+                                        Souhlasím se zpracováním osobních údajů dle
+                                    </span>
 
-                        <input type="hidden" name="package" id="selected-package" value="">
+                                    <a href="/privacy.html"
+                                        data-cz="zásad ochrany osobních údajů"
+                                        data-en="privacy policy">
+                                        zásad ochrany osobních údajů
+                                    </a>.
+                                </span>
+                            </label>
+                        </div>
 
+                        <input type="hidden"
+                            name="package"
+                            id="selected-package"
+                            value="">
 
-                        <button class="btn submit" type="submit" data-cz="Odeslat" data-en="Send">Odeslat</button>
+                        <button class="btn submit"
+                            type="submit"
+                            data-cz="Odeslat poptávku"
+                            data-en="Send inquiry">
+                            Odeslat poptávku
+                        </button>
                     </form>
                 </div>
 
-                <aside class="contact-card reveal">
-                    <h3 data-cz="Co potřebuji vědět" data-en="What I need to know">Co potřebuji vědět</h3>
-                    <ul>
-                        <li data-cz="O čem web bude a pro koho" data-en="What the website is about and for whom">O čem
-                            web bude a pro koho</li>
-                        <li data-cz="Jaký je cíl (kontakty, prodej, poptávky)"
-                            data-en="What’s the goal (leads, sales, inquiries)">Jaký je cíl (kontakty, prodej, poptávky)
-                        </li>
-                        <li data-cz="Termín a priority (rychlost, design, obsah)"
-                            data-en="Timeline and priorities (speed, design, content)">Termín a priority (rychlost,
-                            design, obsah)</li>
-                    </ul>
-
-                    <div class="contact-mini">
-                        <p data-cz="Když chcete, pošlete i inspiraci, 2 až 3 weby, které se vám líbí."
-                            data-en="If you want, send inspiration too, 2 to 3 websites you like.">
-                            Když chcete, pošlete i inspiraci, 2 až 3 weby, které se vám líbí.
-                        </p>
-                    </div>
-                </aside>
             </div>
         </div>
     </section>

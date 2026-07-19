@@ -1,7 +1,14 @@
+/* contact.css */
+
 #contact {
-  padding: var(--section-pad-y) 0;
   position: relative;
-  background: radial-gradient(1000px 400px at top center, rgba(77,171,247,0.06), transparent);
+  margin-top: 0;
+  padding: var(--section-pad-y) 0;
+  background: radial-gradient(
+    850px 380px at 50% 0%,
+    rgba(77, 171, 247, 0.045),
+    transparent
+  );
 }
 
 #contact::before {
@@ -9,135 +16,328 @@
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
   width: 60%;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
 }
 
-.contact-header {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 3rem;
+
+/* ROZLOŽENÍ */
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1050px;
+  margin: 0 auto;
+  align-items: stretch;
 }
 
-.contact-header p {
+.contact-info {
+  padding: 1rem 4rem 1rem 0;
+}
+
+.contact-form-panel {
+  padding: 1rem 0 1rem 4rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+
+/* LEVÁ ČÁST */
+
+#contact h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.contact-intro {
+  max-width: 44ch;
+  margin: 1rem 0 0;
   color: var(--color-secondary);
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
-.contact-grid {
+
+/* KONTAKTNÍ ÚDAJE */
+
+.contact-methods {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 2rem;
-  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 2.2rem;
 }
 
-.contact-card {
-  background: rgba(15,17,26,0.92);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 18px 36px rgba(0,0,0,0.35),
-              0 0 0 1px rgba(255,255,255,0.05);
+.contact-method {
+  display: flex;
+  min-width: 0;
+  min-height: 110px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.2rem;
+
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.03);
+
+  transition: background-color 0.2s ease;
 }
 
-.field {
+.contact-method:hover {
+  border-color: rgba(77,171,247,0.1);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(77,171,247,0.25);
+}
+
+.contact-method-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 1.2rem;
+  color: var(--color-accent);
+}
+
+.contact-method-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-method-content {
   display: grid;
-  gap: 0.5rem;
-  margin: 1rem 0;
+  min-width: 0;
+  gap: 0.2rem;
+  margin-top: auto;
 }
 
-.field span {
-  color: rgba(255,255,255,0.85);
-  font-weight: 600;
-  font-size: 0.9rem;
+.contact-method-label {
+  color: rgba(182, 194, 209, 0.68);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
-.field input,
-.field textarea {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 12px;
-  padding: 0.9rem 1rem;
+.contact-method-value {
+  display: inline-block;
+  max-width: 100%;
   color: var(--color-primary);
-  outline: none;
   font-family: var(--font-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+
+  transition: color 0.2s ease;
 }
 
-.field input:focus,
-.field textarea:focus {
-  border-color: rgba(77,171,247,0.45);
-  box-shadow: 0 0 0 6px rgba(77,171,247,0.10);
+a.contact-method-value:hover,
+.contact-email-button:hover {
+  color: var(--color-accent);
+}
+
+.contact-email-button {
+  appearance: none;
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  text-transform: none;
+}
+
+.contact-email-button.copied {
+  color: var(--color-accent);
+}
+
+.contact-method-value:focus-visible {
+  outline: 2px solid rgba(77, 171, 247, 0.75);
+  outline-offset: 3px;
 }
 
 
-.form-consent {
-  margin: 1rem 0 0.75rem;
+/* PRAVÁ ČÁST */
+
+.contact-form-header h3 {
+  margin: 0;
+  font-size: clamp(1.7rem, 2.5vw, 2.1rem);
+  letter-spacing: -0.025em;
 }
 
-.form-consent label {
+.contact-form-header p {
+  max-width: 42ch;
+  margin: 0.55rem 0 0;
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contact-form-panel form {
+  margin-top: 2rem;
+}
+
+
+/* FORMULÁŘ */
+
+#contact .field {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+}
+
+#contact .field > span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+#contact .field input,
+#contact .field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+
+  color: var(--color-primary);
+  caret-color: var(--color-accent);
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.035);
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+#contact .field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+#contact .field input::placeholder,
+#contact .field textarea::placeholder {
+  color: rgba(182, 194, 209, 0.5);
+}
+
+#contact .field input:hover,
+#contact .field textarea:hover {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+#contact .field input:focus,
+#contact .field textarea:focus {
+  border-bottom-color: var(--color-accent);
+  background: rgba(77, 171, 247, 0.045);
+}
+
+
+/* AUTOFILL */
+
+#contact .field input:-webkit-autofill,
+#contact .field input:-webkit-autofill:hover,
+#contact .field input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-primary);
+  -webkit-box-shadow: 0 0 0 1000px #141823 inset;
+  caret-color: var(--color-primary);
+}
+
+
+/* SOUHLAS */
+
+#contact .form-consent {
+  margin: 1rem 0 1.2rem;
+}
+
+#contact .form-consent label {
   display: flex;
   align-items: flex-start;
   gap: 0.65rem;
-  cursor: pointer;
+
   color: var(--color-secondary);
-  font-size: 0.92rem;
+  font-size: 0.84rem;
   line-height: 1.5;
+  cursor: pointer;
 }
 
-.form-consent input[type="checkbox"] {
-  margin-top: 0.18rem;
+#contact .form-consent input[type="checkbox"] {
   width: 16px;
   height: 16px;
   flex: 0 0 16px;
-  accent-color: #4dabf7;
-  cursor: pointer;
+  margin: 0.18rem 0 0;
   padding: 0;
+  accent-color: var(--color-accent);
+  cursor: pointer;
 }
 
-.form-consent .consent-text {
+#contact .consent-text {
   display: inline;
 }
 
-.form-consent a {
-  color: #4dabf7;
-  text-decoration: none;
+#contact .form-consent a {
+  color: var(--color-accent);
 }
 
-.form-consent a:hover {
+#contact .form-consent a:hover {
   text-decoration: underline;
 }
 
 
-.submit {
-  margin-top: 0.5rem;
-  width: 100%;
-  border-radius: 12px;
-  font-weight: 800;
+/* submit TLAČÍTKO */
+
+#contact .submit {
+  display: inline-flex;
+  width: auto;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+  padding: 0.65rem 1.1rem;
+
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: none;
+
+  border: 0;
+  border-radius: 4px;
+  background: var(--color-accent);
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.contact-note {
-  margin-top: 1rem;
-  color: var(--color-secondary);
-  font-size: 0.95rem;
+#contact .submit:hover {
+  color: #ffffff;
+  background: #339af0;
+  transform: translateY(-1px);
 }
 
-.contact-card ul {
-  margin: 0;
-  padding-left: 1.1rem;
+#contact .submit:active {
+  transform: translateY(0);
 }
 
-.contact-card li {
-  margin: 0.6rem 0;
-  color: var(--color-secondary);
+#contact .submit:focus-visible {
+  outline: 2px solid rgba(77, 171, 247, 0.8);
+  outline-offset: 3px;
 }
 
-.contact-mini p {
-  margin-top: 1.25rem;
-  color: var(--color-secondary);
-}
 
-.hidden {
+/* NETLIFY HONEYPOT */
+
+#contact .hidden {
   display: none;
 }

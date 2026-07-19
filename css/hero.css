@@ -156,6 +156,7 @@
   box-shadow:
     0 28px 70px rgba(0,0,0,0.4),
     0 0 0 1px rgba(255,255,255,0.02);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -185,6 +186,7 @@
   border-radius: 999px;
   background: rgba(8, 11, 20, 0.22);
   border: 1px solid rgba(255,255,255,0.08);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
@@ -352,7 +354,7 @@
   .hero-layout {
     grid-template-columns: 1fr;
     gap: 2.2rem;
-    min-height: auto;
+    min-height: 0;
     padding: calc(var(--nav-height) + 1.5rem) 0 3rem;
   }
 
@@ -412,12 +414,11 @@
 
 @media (max-width: 768px) {
   #hero {
-    min-height: auto;
+    min-height: 0;
   }
 
   .hero-layout {
     grid-template-columns: 1fr;
-    min-height: auto;
     padding: calc(var(--nav-height) + 1.1rem) 0 2.6rem;
     gap: 2.1rem;
   }
