@@ -154,6 +154,12 @@ a.contact-method-value:hover,
   text-transform: none;
 }
 
+.contact-method--email,
+.contact-method--email .contact-email-button {
+  cursor: pointer;
+}
+
+
 .contact-email-button.copied {
   color: var(--color-accent);
 }

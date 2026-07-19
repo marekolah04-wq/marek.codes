@@ -174,6 +174,20 @@ const getCopyWhere = (el) => {
   });
 })();
 
+const contactEmailButton = document.querySelector(
+  "#contact .contact-email-button"
+);
+
+const contactEmailCard = contactEmailButton?.closest(".contact-method");
+
+if (contactEmailButton && contactEmailCard) {
+  contactEmailCard.addEventListener("click", (event) => {
+    if (contactEmailButton.contains(event.target)) return;
+
+    contactEmailButton.click();
+  });
+}
+
 
 
 
