@@ -1,14 +1,12 @@
 @media (max-width: 1024px) {
-
-  #projects,
-  #services {
-    padding: 6rem 3rem;
-  }
-
-  .projects-grid {
-    gap: 2rem;
+  :root {
+    --section-pad-y: 6rem;
   }
 }
+
+
+/* -------------------------------------------------------------------------- */
+/* TABLET                                                                     */
 
 @media (max-width: 900px) {
 
@@ -24,11 +22,14 @@
 
   .contact-form-panel {
     padding: 3.5rem 0 0;
-    border-left: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.13);
+    border-left: 0;
   }
 }
 
+
+/* -------------------------------------------------------------------------- */
+/* MOBILE                                                                     */
 
 @media (max-width: 768px) {
 
@@ -43,28 +44,32 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(15, 17, 26, 0.95);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    background: rgba(15, 17, 26, 0.95);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
     transform: translateY(-100%);
     transition: transform 0.4s ease;
     z-index: 2000;
   }
 
-  .nav-menu ul {
+  #navbar .nav-menu ul {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    text-align: center;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    text-align: center;
   }
 
-  .nav-menu a {
+  #navbar .nav-menu a,
+  #navbar .nav-menu button {
     font-size: 1.4rem;
   }
 
@@ -78,10 +83,6 @@
   }
 
   /* CONTACT */
-  #contact {
-    padding: 6rem 0;
-  }
-
   .contact-info {
     padding-bottom: 3rem;
   }
@@ -89,11 +90,25 @@
   .contact-form-panel {
     padding-top: 3rem;
   }
+
+  /* FOOTER */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-meta {
+    align-items: center;
+  }
+
+  .footer-links .footer-link-btn {
+    text-align: center;
+  }
 }
 
 
-
-
+/* -------------------------------------------------------------------------- */
+/* SMALL MOBILE                                                               */
 
 @media (max-width: 480px) {
 
@@ -101,59 +116,7 @@
     --section-pad-y: 5rem;
   }
 
-  /* HERO */
-  #hero .section-card {
-    padding: 2.5rem 1.5rem;
-  }
-
-  #hero h1 {
-    font-size: 2rem;
-  }
-
-   .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* PROJECTS */
-  #projects {
-    padding: 5rem 1.5rem;
-  }
-
-  .projects-header {
-    margin-top: 2rem;
-  }
-
-  .projects-header p {
-    font-size: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .project-content {
-    padding: 1.25rem;
-  }
-
-  .project-content p {
-    font-size: 0.95rem;
-  }
-
-  .project-image img {
-    height: auto;
-  }
-
-  .projects-grid {
-    gap: 1.4rem;
-  }
-
   /* SERVICES */
-  #services {
-    padding: 5rem 1.5rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
   .services-header p {
     font-size: 1rem;
   }
@@ -162,17 +125,12 @@
     padding: 1.5rem;
   }
 
-  /* ABOUT + CONTACT cards padding */
-  .about-card,
-  .contact-card {
+  /* ABOUT */
+  .about-card {
     padding: 1.6rem;
   }
 
   /* CONTACT */
-  #contact {
-    padding: 5rem 0;
-  }
-
   #contact h2 {
     font-size: 1.85rem;
   }
@@ -235,27 +193,3 @@
     min-height: 44px;
   }
 }
-
-
-
-/* ------------------------------------------------------------------------------------- */
-/* FOOTER ------------------------------------------------------------------------------ */
-
-@media (max-width: 768px) {
-  .footer-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-meta {
-    align-items: center;
-  }
-
-  .footer-links .footer-link-btn {
-    text-align: center;
-  }
-}
-
-
-
-

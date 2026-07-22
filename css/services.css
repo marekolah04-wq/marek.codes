@@ -30,6 +30,7 @@
 }
 
 .services-header p {
+  margin: 0;
   color: var(--color-secondary);
   font-size: 1.1rem;
 }
@@ -39,8 +40,9 @@
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 .service-card {
@@ -87,4 +89,14 @@
 .service-card.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 680px;
+    margin: 0 auto;
+  }
 }

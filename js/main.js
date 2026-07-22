@@ -31,6 +31,8 @@ const updateLanguage = () => {
   }
   
   localStorage.setItem("preferredLang", currentLang)
+
+  document.dispatchEvent(new CustomEvent("languagechange"));
 };
 
 updateLanguage();
@@ -214,30 +216,136 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* form */
+/* CONTACT FORM */
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector('form[name="contact"]');
+
   if (!form) return;
 
-  form.addEventListener("submit", () => {
-    sessionStorage.setItem("leadPending", "1");
+  const submitButton = form.querySelector('button[type="submit"]');
+  const statusMessage = form.querySelector("[data-form-status]");
+
+  if (!submitButton || !statusMessage) return;
+
+  let submitState = "idle";
+  let resetButtonTimer;
+
+  const getLanguage = () => currentLang === "en" ? "en" : "cz";
+
+  const getText = (element, suffix = "") => {
+    const key = `${getLanguage()}${suffix}`;
+    return element.dataset[key] || "";
+  };
+
+  const setButtonState = (state) => {
+    submitState = state;
+
+    submitButton.classList.toggle("is-sent", state === "sent");
+    submitButton.disabled = state !== "idle";
+
+    if (state === "loading") {
+      submitButton.textContent = getText(submitButton, "Loading");
+      return;
+    }
+
+    if (state === "sent") {
+      submitButton.textContent = getText(submitButton, "Sent");
+      return;
+    }
+
+    submitButton.textContent = getText(submitButton);
+  };
+
+  const showStatus = (type) => {
+    const suffix = type === "success" ? "Success" : "Error";
+
+    statusMessage.textContent = getText(statusMessage, suffix);
+    statusMessage.classList.remove("is-success", "is-error");
+    statusMessage.classList.add(
+      type === "success" ? "is-success" : "is-error"
+    );
+    statusMessage.hidden = false;
+  };
+
+  const clearStatus = () => {
+    statusMessage.hidden = true;
+    statusMessage.textContent = "";
+    statusMessage.classList.remove("is-success", "is-error");
+  };
+
+  const updateFormLanguage = () => {
+    setButtonState(submitState);
+
+    if (!statusMessage.hidden) {
+      const type = statusMessage.classList.contains("is-error")
+        ? "error"
+        : "success";
+
+      showStatus(type);
+    }
+  };
+
+  document.addEventListener("languagechange", updateFormLanguage);
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    clearTimeout(resetButtonTimer);
+    clearStatus();
+    setButtonState("loading");
+    form.setAttribute("aria-busy", "true");
+
+    const packageInput = form.querySelector('[name="package"]');
+    const selectedPackage = packageInput?.value || "";
+
+    try {
+      const formData = new FormData(form);
+
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed: ${response.status}`);
+      }
+
+      form.reset();
+      sessionStorage.removeItem("selectedPackage");
+
+      setButtonState("sent");
+      showStatus("success");
+
+      trackEvent("generate_lead", {
+        method: "netlify_form",
+        package: selectedPackage
+      });
+
+      resetButtonTimer = setTimeout(() => {
+        setButtonState("idle");
+      }, 4000);
+
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+
+      setButtonState("idle");
+      showStatus("error");
+
+    } finally {
+      form.removeAttribute("aria-busy");
+    }
   });
 });
 
-
-//thanks event
-
-(function leadTrackingInit() {
-  if (!window.location.pathname.toLowerCase().includes("thanks.html")) return;
-
-  const pending = sessionStorage.getItem("leadPending");
-  if (!pending) return;
-
-  const selectedPackage = sessionStorage.getItem("selectedPackage") || "";
-  trackEvent("generate_lead", { method: "netlify_form", package: selectedPackage });
-
-  sessionStorage.removeItem("leadPending");
-})();
 
 
 

@@ -1,8 +1,12 @@
 #footer {
-    margin-top: 6rem;
-    padding: 3rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    background: radial-gradient(900px 300px at top center, rgba(77, 171, 247, 0.06), transparent);
+  margin-top: 0;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(
+    900px 300px at top center,
+    rgba(77, 171, 247, 0.06),
+    transparent
+  );
 }
 
 .footer-inner {

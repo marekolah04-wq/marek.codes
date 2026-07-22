@@ -3,8 +3,9 @@
 ========================================================= */
 
 @media (max-width: 700px) {
+@media (max-width: 700px) {
   #projects {
-    padding: 4.5rem 0 5rem;
+    padding: var(--section-pad-y) 0;
   }
 
   #projects .container {
@@ -16,7 +17,7 @@
   .projects-header {
     max-width: 340px;
     padding: 0 1.5rem;
-    margin: 2rem auto 0;
+    margin: 0 auto;
   }
 
   .projects-header h2 {
@@ -24,15 +25,14 @@
   }
 
   .projects-header p {
+    margin: 0.75rem 0 0;
     font-size: 0.95rem;
-    margin-top: 0.75rem;
-    margin-bottom: 0;
   }
 
   .projects-carousel {
     position: relative;
     margin-top: 2rem;
-    padding: 0 0 2.5rem;
+    padding: 0;
   }
 
   .projects-grid {

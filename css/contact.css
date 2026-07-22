@@ -347,3 +347,68 @@ a.contact-method-value:hover,
 #contact .hidden {
   display: none;
 }
+
+
+
+
+/* STAV ODESÍLÁNÍ FORMULÁŘE */
+
+#contact .submit:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
+#contact .submit:disabled:hover {
+  background: var(--color-accent);
+  transform: none;
+}
+
+#contact .submit.is-sent {
+  cursor: default;
+  opacity: 1;
+}
+
+#contact .form-status {
+  max-width: 44ch;
+  margin: 1rem 0 0;
+  padding: 0.7rem 0 0.7rem 0.9rem;
+
+  font-size: 0.88rem;
+  line-height: 1.55;
+
+  border-left: 2px solid transparent;
+  animation: formStatusIn 0.25s ease;
+}
+
+#contact .form-status.is-success {
+  color: #d7eaff;
+  border-left-color: var(--color-accent);
+}
+
+#contact .form-status.is-error {
+  color: #ffc9c9;
+  border-left-color: #ff6b6b;
+}
+
+#contact .form-status[hidden] {
+  display: none;
+}
+
+@keyframes formStatusIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #contact .form-status {
+    animation: none;
+  }
+}

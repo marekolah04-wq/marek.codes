@@ -12,10 +12,16 @@
   --font-size-text: 1rem;
   --line-height-text: 1.6;
   --line-height-heading: 1.2;
+
+  --nav-height: 86px;
+  --section-pad-y: 8rem;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   font-family: var(--font-text);
@@ -64,9 +70,10 @@ body {
 
 
 section {
-  margin-top: 5rem;
   position: relative;
+  margin-top: 0;
   overflow: hidden;
+  scroll-margin-top: 0;
 }
 
 .section-card {
@@ -168,16 +175,6 @@ button:hover {
   opacity: 1;
   transform: translateY(0);
 }
-
-:root {
-  --nav-height: 86px; 
-  --section-pad-y: 8rem;
-}
-
-section {
-  scroll-margin-top: calc(var(--nav-height) + 24px);
-}
-
 
 
 

@@ -22,7 +22,12 @@
   margin: 0 auto 3rem;
 }
 
+.about-header h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
 .about-header p {
+  margin: 0;
   color: var(--color-secondary);
   font-size: 1.1rem;
 }
@@ -57,7 +62,6 @@
   display: grid;
   gap: 1rem;
   margin: 1rem 0 1.5rem;
-  margin: 0.9rem 0;
 }
 
 .point {
@@ -69,11 +73,10 @@
 .dot {
   width: 10px;
   height: 10px;
-  margin-top: 0.35rem;
+  margin-top: 0.4rem;
   border-radius: 999px;
   background: var(--color-accent);
-  margin-top: 0.4rem;
-  box-shadow: 0 0 0 6px rgba(77,171,247,0.12);
+  box-shadow: 0 0 0 6px rgba(77, 171, 247, 0.12);
 }
 
 .point p {
