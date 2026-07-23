@@ -54,76 +54,202 @@ if (langBtn) {
 }
 
 
-//COOKIES ------------------------------------------------------------------
-const trackEvent = (name, params = {}) => {
-  if (typeof gtag !== "function") return;
-  gtag("event", name, params);
+// COOKIES + BASIC CONSENT MODE --------------------------------------------
+
+const GA_MEASUREMENT_ID = "G-PQL4NTPRN0";
+const COOKIE_CONSENT_KEY = "cookieConsent_v1";
+
+let analyticsLoaded = false;
+let analyticsAllowed = false;
+
+const getConsentState = (analyticsStatus) => ({
+  analytics_storage: analyticsStatus,
+  ad_storage: "denied",
+  ad_user_data: "denied",
+  ad_personalization: "denied"
+});
+
+const loadGoogleAnalytics = () => {
+  if (analyticsLoaded) return;
+
+  analyticsLoaded = true;
+  analyticsAllowed = true;
+
+  window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+  window.dataLayer = window.dataLayer || [];
+
+  window.gtag = window.gtag || function () {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag(
+    "consent",
+    "default",
+    getConsentState("granted")
+  );
+
+  window.gtag("js", new Date());
+  window.gtag("config", GA_MEASUREMENT_ID);
+
+  const script = document.createElement("script");
+
+  script.id = "google-analytics-script";
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+
+  document.head.appendChild(script);
 };
 
-const updateConsent = (status) => {
-  if (typeof gtag !== "function") return;
+const grantAnalytics = () => {
+  analyticsAllowed = true;
+  window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
 
-  const value = status === "granted" ? "granted" : "denied";
-  gtag("consent", "update", {
-    analytics_storage: value,
-    ad_storage: value,
-    ad_user_data: value,
-    ad_personalization: value
+  if (!analyticsLoaded) {
+    loadGoogleAnalytics();
+    return;
+  }
+
+  window.gtag?.(
+    "consent",
+    "update",
+    getConsentState("granted")
+  );
+};
+
+const clearAnalyticsCookies = () => {
+  const hostname = window.location.hostname;
+  const rootDomain = hostname.split(".").slice(-2).join(".");
+
+  const domains = [
+    "",
+    hostname,
+    `.${hostname}`,
+    `.${rootDomain}`
+  ];
+
+  document.cookie.split(";").forEach((cookie) => {
+    const cookieName = cookie.split("=")[0].trim();
+
+    if (!/^(_ga|_gid|_gat)/.test(cookieName)) return;
+
+    domains.forEach((domain) => {
+      const domainAttribute = domain
+        ? `; domain=${domain}`
+        : "";
+
+      document.cookie =
+        `${cookieName}=; Max-Age=0; path=/${domainAttribute}; SameSite=Lax`;
+    });
   });
 };
 
-const getCopyWhere = (el) => {
-  if (!el) return "unknown";
-  if (el.closest("footer")) return "footer";
-  if (el.closest(".thanks-page")) return "thanks";
-  if (el.closest("#contact")) return "contact";
-  if (el.closest(".project-detail")) return "project";
+const denyAnalytics = () => {
+  if (typeof window.gtag === "function") {
+    window.gtag(
+      "consent",
+      "update",
+      getConsentState("denied")
+    );
+  }
+
+  analyticsAllowed = false;
+  window[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+
+  clearAnalyticsCookies();
+};
+
+const trackEvent = (name, params = {}) => {
+  if (!analyticsAllowed || typeof window.gtag !== "function") return;
+
+  window.gtag("event", name, params);
+};
+
+const getCopyWhere = (element) => {
+  if (!element) return "unknown";
+  if (element.closest("footer")) return "footer";
+  if (element.closest(".privacy-page, .thanks-page")) return "privacy";
+  if (element.closest("#contact")) return "contact";
+  if (element.closest(".project-detail")) return "project";
+
   return "unknown";
 };
 
-/* BANNER */
+
+/* COOKIE BANNER */
+
 (function cookieConsentInit() {
   const banner = document.getElementById("cookie-banner");
+
   if (!banner) return;
 
-  const acceptBtn = banner.querySelector("[data-cookie-accept]");
-  const rejectBtn = banner.querySelector("[data-cookie-reject]");
-  const settingsBtn = document.querySelector("[data-cookie-settings]");
+  const acceptButton = banner.querySelector("[data-cookie-accept]");
+  const rejectButton = banner.querySelector("[data-cookie-reject]");
 
-  const hide = () => { banner.style.display = "none"; };
-  const show = () => { banner.style.display = ""; };
-
-  const setChoice = (value) => {
-    localStorage.setItem("cookieConsent_v1", value);
-    updateConsent(value);
-    hide();
-    trackEvent("cookie_consent", { value });
+  const hideBanner = () => {
+    banner.style.display = "none";
   };
 
-  if (acceptBtn) acceptBtn.addEventListener("click", () => setChoice("granted"));
-  if (rejectBtn) rejectBtn.addEventListener("click", () => setChoice("denied"));
+  const showBanner = () => {
+    banner.style.display = "";
+  };
 
-  // cookies footer
-  if (settingsBtn) {
-    settingsBtn.addEventListener("click", () => {
-      localStorage.removeItem("cookieConsent_v1");
-      updateConsent("denied");
-      show();
-      trackEvent("cookie_settings_open");
-    });
+  const saveChoice = (choice) => {
+    localStorage.setItem(COOKIE_CONSENT_KEY, choice);
+
+    if (choice === "granted") {
+      grantAnalytics();
+
+      trackEvent("cookie_consent", {
+        value: "granted"
+      });
+    } else {
+      denyAnalytics();
+    }
+
+    hideBanner();
+  };
+
+  acceptButton?.addEventListener("click", () => {
+    saveChoice("granted");
+  });
+
+  rejectButton?.addEventListener("click", () => {
+    saveChoice("denied");
+  });
+
+  /*
+   * Delegování funguje i pro footer,
+   * který je do stránky vložený až později přes JavaScript.
+   */
+  document.addEventListener("click", (event) => {
+    const settingsButton = event.target.closest(
+      "[data-cookie-settings]"
+    );
+
+    if (!settingsButton) return;
+
+    showBanner();
+    acceptButton?.focus();
+  });
+
+  const storedChoice = localStorage.getItem(
+    COOKIE_CONSENT_KEY
+  );
+
+  if (storedChoice === "granted") {
+    grantAnalytics();
+    hideBanner();
+    return;
   }
 
-  // initial state
-  const stored = localStorage.getItem("cookieConsent_v1");
-  if (stored === "granted" || stored === "denied") {
-    updateConsent(stored);
-    hide();
-  } else {
-    show();
+  if (storedChoice === "denied") {
+    denyAnalytics();
+    hideBanner();
+    return;
   }
+
+  showBanner();
 })();
-
-//------------------------------------------------
 
 
 //copy mail

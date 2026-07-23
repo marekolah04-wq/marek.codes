@@ -32,23 +32,7 @@
 
 
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQL4NTPRN0"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
 
-    // default consent = denied (dokud user neklikne)
-    gtag('consent', 'default', {
-        analytics_storage: 'denied',
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied'
-    });
-
-    gtag('js', new Date());
-    gtag('config', 'G-PQL4NTPRN0', { anonymize_ip: true });
-    </script>
 
 
 
@@ -820,24 +804,22 @@
                         </label>
 
                         <div class="form-consent">
-                            <label>
-                                <input type="checkbox"
-                                    id="privacy-consent"
-                                    name="privacy-consent"
-                                    required>
+                        <p class="form-privacy-note">
+                        <span
+                            data-cz="Odesláním formuláře berete na vědomí zpracování osobních údajů podle "
+                            data-en="By submitting this form, you acknowledge the processing of personal data under the "
+                        >
+                            Odesláním formuláře berete na vědomí zpracování osobních údajů podle
+                        </span>
 
-                                <span class="consent-text">
-                                    <span data-cz="Souhlasím se zpracováním osobních údajů dle "
-                                        data-en="I agree to the processing of personal data according to the ">
-                                        Souhlasím se zpracováním osobních údajů dle
-                                    </span>
-
-                                    <a href="/privacy.html"
-                                        data-cz="zásad ochrany osobních údajů"
-                                        data-en="privacy policy">
-                                        zásad ochrany osobních údajů
-                                    </a>.
-                                </span>
+                        <a
+                            href="/privacy.html"
+                            data-cz="zásad ochrany osobních údajů"
+                            data-en="Privacy Policy"
+                        >
+                            zásad ochrany osobních údajů
+                        </a>.
+                        </p>
                             </label>
                         </div>
 

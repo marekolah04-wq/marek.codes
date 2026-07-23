@@ -1,0 +1,333 @@
+/* privacy.css */
+
+.privacy-page {
+  position: relative;
+  min-height: 100vh;
+  padding: var(--section-pad-y) 0;
+  background:
+    radial-gradient(
+      850px 380px at 50% 0%,
+      rgba(77, 171, 247, 0.045),
+      transparent
+    );
+}
+
+.privacy-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 60%;
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+}
+
+
+/* ROZLOŽENÍ */
+
+.privacy-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.25fr);
+  max-width: 1100px;
+  align-items: start;
+}
+
+.privacy-intro {
+  position: sticky;
+  top: calc(var(--nav-height) + 2rem);
+  padding: 0 4rem 1rem 0;
+}
+
+.privacy-content {
+  min-width: 0;
+  padding-left: 4rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+/* ZPĚT NA HLAVNÍ STRÁNKU */
+
+.privacy-back {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 2.2rem;
+
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.privacy-back:hover {
+  color: var(--color-accent);
+  transform: translateX(-1px);
+}
+
+.privacy-back:focus-visible {
+  outline: 2px solid rgba(77, 171, 247, 0.8);
+  outline-offset: 3px;
+}
+
+
+/* ÚVOD */
+
+.privacy-label {
+  margin: 0 0 1rem;
+
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.privacy-intro h1 {
+  margin: 0;
+
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.privacy-lead {
+  max-width: 35ch;
+  margin: 1.1rem 0 0;
+
+  color: var(--color-secondary);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.privacy-updated {
+  margin: 1.25rem 0 0;
+
+  color: rgba(182, 194, 209, 0.65);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.privacy-updated time {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* NASTAVENÍ COOKIES */
+
+.privacy-cookie-settings {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin-top: 1.6rem;
+  padding: 0.6rem 0.9rem;
+
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: left;
+  text-transform: none;
+
+  border: 1px solid rgba(77, 171, 247, 0.3);
+  border-radius: 4px;
+  background: rgba(77, 171, 247, 0.06);
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.privacy-cookie-settings:hover {
+  color: var(--color-primary);
+  border-color: rgba(77, 171, 247, 0.55);
+  background: rgba(77, 171, 247, 0.11);
+}
+
+.privacy-cookie-settings:focus-visible {
+  outline: 2px solid rgba(77, 171, 247, 0.8);
+  outline-offset: 3px;
+}
+
+
+/* OBSAH */
+
+.privacy-page .privacy-section {
+  margin: 0 0 2.6rem;
+  padding: 0 0 2.6rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: visible;
+}
+
+.privacy-page .privacy-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.privacy-section h2 {
+  margin: 0 0 1rem;
+
+  color: var(--color-primary);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.privacy-section p {
+  margin: 0.8rem 0 0;
+
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.privacy-section a {
+  color: var(--color-accent);
+  overflow-wrap: anywhere;
+}
+
+.privacy-section a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacy-section a:focus-visible {
+  outline: 2px solid rgba(77, 171, 247, 0.8);
+  outline-offset: 3px;
+}
+
+
+/* ÚDAJE SPRÁVCE */
+
+.privacy-identity {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.25rem;
+  padding-left: 1rem;
+
+  color: var(--color-secondary);
+  font-size: 0.92rem;
+  font-style: normal;
+  line-height: 1.6;
+
+  border-left: 2px solid var(--color-accent);
+}
+
+.privacy-identity strong {
+  margin-bottom: 0.15rem;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+}
+
+
+/* SEZNAMY */
+
+.privacy-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.privacy-list li {
+  padding-left: 0.25rem;
+
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.privacy-list li::marker {
+  color: var(--color-accent);
+}
+
+
+/* TABULKA */
+
+.privacy-table-wrap {
+  width: 100%;
+  margin-top: 1.5rem;
+  overflow-x: auto;
+}
+
+.privacy-table {
+  width: 100%;
+  min-width: 580px;
+
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.privacy-table th,
+.privacy-table td {
+  padding: 0.9rem 0.8rem;
+  vertical-align: top;
+}
+
+.privacy-table th {
+  color: rgba(182, 194, 209, 0.65);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.privacy-table td {
+  color: var(--color-secondary);
+  font-size: 0.84rem;
+  line-height: 1.55;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.privacy-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.privacy-table code {
+  padding: 0.15rem 0.35rem;
+
+  color: #d7eaff;
+  font-size: 0.78rem;
+
+  border-radius: 3px;
+  background: rgba(77, 171, 247, 0.08);
+}
+
+
+/* ODKAZY POSKYTOVATELŮ */
+
+.privacy-provider-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.privacy-provider-links a {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+
+/* ZÁVĚREČNÝ KONTAKT */
+
+.privacy-contact .privacy-email {
+  display: inline-block;
+  margin-top: 0.7rem;
+
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+}

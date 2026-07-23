@@ -19,22 +19,7 @@
     <!-- Google tag (gtag.js) -->
 
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQL4NTPRN0"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
 
-    // default consent = denied (dokud user neklikne)
-    gtag('consent', 'default', {
-        analytics_storage: 'denied',
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied'
-    });
-
-    gtag('js', new Date());
-    gtag('config', 'G-PQL4NTPRN0', { anonymize_ip: true });
-    </script>
 
 
     
@@ -42,129 +27,9 @@
     <link rel="stylesheet" href="/css/navbar.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/queries.css" />
+    <link rel="stylesheet" href="/css/privacy.css">
 
-    <style>
-        .thanks-page {
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            padding: 1rem 5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .thanks-page::before {
-            content: "";
-            position: absolute;
-            inset: -200px;
-            background:
-                radial-gradient(900px 420px at 50% 10%, rgba(77, 171, 247, 0.10), transparent 60%),
-                radial-gradient(700px 320px at 10% 80%, rgba(77, 171, 247, 0.06), transparent 60%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .thanks-page::after {
-            content: "";
-            position: absolute;
-            inset: -150px;
-            background-image: url("assets/img/mouse.svg");
-            background-size: 28px 28px;
-            background-repeat: repeat;
-            opacity: 0.02;
-            pointer-events: none;
-            z-index: 0;
-            animation: moveCursors 20s linear infinite;
-        }
-
-        .thanks-card {
-            position: relative;
-            z-index: 1;
-            max-width: 780px;
-            width: 100%;
-            text-align: center;
-            padding: 3.5rem 2.5rem;
-            border-radius: 24px;
-            background: rgba(15, 17, 26, 0.92);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
-            overflow: hidden;
-        }
-
-        .thanks-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(77, 171, 247, 0.14), transparent 40%);
-            pointer-events: none;
-        }
-
-        .thanks-icon {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 1rem;
-            border-radius: 16px;
-            display: grid;
-            place-items: center;
-            background: rgba(77, 171, 247, 0.12);
-            border: 1px solid rgba(77, 171, 247, 0.25);
-            box-shadow: 0 16px 30px rgba(77, 171, 247, 0.08);
-        }
-
-        .thanks-icon svg {
-            width: 26px;
-            height: 26px;
-            color: var(--color-accent);
-        }
-
-        .thanks-title {
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
-            letter-spacing: -0.02em;
-            margin-bottom: 0.8rem;
-        }
-
-        .thanks-text {
-            color: var(--color-secondary);
-            max-width: 680px;
-            margin: 0 auto 2rem;
-            font-size: 1.05rem;
-            line-height: 1.65;
-        }
-
-        .thanks-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 1.25rem;
-        }
-
-        .thanks-actions a {
-            padding: 0.85rem 1.4rem;
-            border-radius: 12px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.6rem;
-        }
-
-
-        /* responsive */
-        @media (max-width: 480px) {
-            .thanks-card {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .thanks-text {
-                font-size: 1rem;
-            }
-
-            .thanks-actions a {
-                width: 100%;
-            }
-        }
-    </style>
+   
 </head>
 
 <body>
@@ -192,83 +57,594 @@
         </div>
     </header>
 
-    <main class="thanks-page">
-  <section class="thanks-card">
-    <h1 class="thanks-title"
-      data-cz="Soukromí a cookies"
-      data-en="Privacy and cookies">
-      Soukromí a cookies
-    </h1>
+   
 
-    <div class="thanks-text" style="text-align:left">
 
-  <p data-cz="Na webu používám analytiku (Google Analytics 4), abych věděl, co lidi nejvíc zajímá a mohl web zlepšovat. Analytika se spustí až po tvém souhlasu v cookie liště."
-     data-en="I use analytics (Google Analytics 4) to understand what visitors care about and improve the site. Analytics starts only after your consent in the cookie banner.">
-    Na webu používám analytiku (Google Analytics 4), abych věděl, co lidi nejvíc zajímá a mohl web zlepšovat. Analytika se spustí až po tvém souhlasu v cookie liště.
-  </p>
 
-  <h3 data-cz="Kdo zpracovává data" data-en="Who processes the data">Kdo zpracovává data</h3>
-  <p data-cz="Správce: Marek Oláh, kontakt: info@marek-codes.cz"
-     data-en="Controller: Marek Oláh, contact: info@marek-codes.cz">
-    Správce: Marek Oláh, kontakt: info@marek-codes.cz
-  </p>
+    <main class="privacy-page">
+  <div class="container privacy-layout">
 
-  <h3 data-cz="Jaká data zpracovávám" data-en="What data I process">Jaká data zpracovávám</h3>
+    <header class="privacy-intro">
 
-  <p data-cz="Pokud mě kontaktuješ přes formulář, zpracovávám jméno, email a obsah zprávy pouze za účelem odpovědi a další komunikace."
-     data-en="If you contact me via the form, I process your name, email and message only for replying and further communication.">
-    Pokud mě kontaktuješ přes formulář, zpracovávám jméno, email a obsah zprávy pouze za účelem odpovědi a další komunikace.
-  </p>
+<a
+  class="privacy-back"
+  href="/"
+  data-cz="← Zpět na hlavní stránku"
+  data-en="← Back to homepage"
+>
+  ← Zpět na hlavní stránku
+</a>
 
-  <p data-cz="Data nejsou předávána třetím stranám (kromě technického zpracování přes služby jako Netlify nebo Google Analytics)."
-     data-en="Data is not shared with third parties (except technical processing via services like Netlify or Google Analytics).">
-    Data nejsou předávána třetím stranám (kromě technického zpracování přes služby jako Netlify nebo Google Analytics).
-  </p>
 
-  <h3 data-cz="Co se měří" data-en="What is measured">Co se měří</h3>
-  <p data-cz="Měřím anonymní chování na webu, například návštěvy stránek nebo kliknutí na tlačítka."
-     data-en="I measure anonymized behavior on the site, such as page visits or button clicks.">
-    Měřím anonymní chování na webu, například návštěvy stránek nebo kliknutí na tlačítka.
-  </p>
+      <p
+        class="privacy-label"
+        data-cz="SOUKROMÍ"
+        data-en="PRIVACY"
+      >
+        SOUKROMÍ
+      </p>
 
-  <h3 data-cz="Jak to vypnout nebo změnit" data-en="How to disable or change it">Jak to vypnout nebo změnit</h3>
-  <p data-cz="Souhlas můžeš kdykoliv změnit přes cookie lištu ve spodní části webu."
-     data-en="You can change your choice anytime via the cookie banner.">
-    Souhlas můžeš kdykoliv změnit přes cookie lištu ve spodní části webu.
-  </p>
+      <h1
+        data-cz="Ochrana osobních údajů"
+        data-en="Privacy Policy"
+      >
+        Ochrana osobních údajů
+      </h1>
 
-  <h3 data-cz="Vaše práva" data-en="Your rights">Vaše práva</h3>
-  <p data-cz="Máš právo požádat o přístup k údajům, jejich opravu nebo smazání. Stačí napsat na email."
-     data-en="You have the right to request access, correction or deletion of your data. Just send an email.">
-    Máš právo požádat o přístup k údajům, jejich opravu nebo smazání. Stačí napsat na email.
-  </p>
+      <p
+        class="privacy-lead"
+        data-cz="Přehledně a srozumitelně o tom, jaké údaje na webu zpracovávám, proč je potřebuji a jaká máte práva."
+        data-en="A clear overview of what data I process on this website, why I need it and what rights you have."
+      >
+        Přehledně a srozumitelně o tom, jaké údaje na webu zpracovávám,
+        proč je potřebuji a jaká máte práva.
+      </p>
 
-  <p data-cz="Osobní údaje uchovávám po dobu nezbytnou pro vyřízení poptávky, maximálně však po dobu 12 měsíců."
-     data-en="I keep personal data for as long as necessary to handle the inquiry, but no longer than 12 months.">
-    Osobní údaje uchovávám po dobu nezbytnou pro vyřízení poptávky, maximálně však po dobu 12 měsíců.</p>
+      <p class="privacy-updated">
+        <span
+          data-cz="Poslední aktualizace:"
+          data-en="Last updated:"
+        >
+          Poslední aktualizace:
+        </span>
 
-  <p style="opacity:.8"
-     data-cz="Poslední aktualizace: duben 2026"
-     data-en="Last updated: April 2026">
-    Poslední aktualizace: duben 2026
-  </p>
+        <time
+          datetime="2026-07-23"
+          data-cz="23. července 2026"
+          data-en="23 July 2026"
+        >
+          23. července 2026
+        </time>
+      </p>
 
-</div>
-
-    <div class="thanks-actions">
-      <a class="thanks-btn" href="index.html#contact"
-         data-cz="Kontakt"
-         data-en="Contact">
-        Kontakt
-      </a>
-      <button type="button" class="copy-email" data-copy-email="info@marek-codes.cz"
-        data-cz="info@marek-codes.cz"
-        data-en="info@marek-codes.cz">
-        info@marek-codes.cz
+      <button
+        type="button"
+        class="privacy-cookie-settings"
+        data-cookie-settings
+        data-cz="Upravit nastavení cookies"
+        data-en="Change cookie settings"
+      >
+        Upravit nastavení cookies
       </button>
-    </div>
-  </section>
+    </header>
+
+
+    <article class="privacy-content">
+
+      <section
+        class="privacy-section"
+        aria-labelledby="privacy-controller"
+      >
+        <h2
+          id="privacy-controller"
+          data-cz="1. Správce osobních údajů"
+          data-en="1. Data controller"
+        >
+          1. Správce osobních údajů
+        </h2>
+
+        <p
+          data-cz="Správcem osobních údajů zpracovávaných prostřednictvím tohoto webu je:"
+          data-en="The controller of personal data processed through this website is:"
+        >
+          Správcem osobních údajů zpracovávaných prostřednictvím tohoto webu je:
+        </p>
+
+        <address class="privacy-identity">
+          <strong>Marek Oláh</strong>
+
+          <span
+            data-cz="IČO: 24370673"
+            data-en="Business ID: 24370673"
+          >
+            IČO: 24370673
+          </span>
+
+          <span
+            data-cz="Sídlo: Markova 564, 345 06 Kdyně"
+            data-en="Registered address: Markova 564, 345 06 Kdyně, Czech Republic"
+          >
+            Sídlo: Markova 564, 345 06 Kdyně
+          </span>
+
+          <span
+            data-cz="Zapsán v živnostenském rejstříku"
+            data-en="Registered in the Czech Trade Licensing Register"
+          >
+            Zapsán v živnostenském rejstříku
+          </span>
+
+          <a href="mailto:info@marek-codes.cz">
+            info@marek-codes.cz
+          </a>
+        </address>
+      </section>
+
+
+      <section
+        class="privacy-section"
+        aria-labelledby="privacy-form"
+      >
+        <h2
+          id="privacy-form"
+          data-cz="2. Kontaktní formulář"
+          data-en="2. Contact form"
+        >
+          2. Kontaktní formulář
+        </h2>
+
+        <p
+          data-cz="Při odeslání formuláře zpracovávám vaše jméno, e-mail, obsah zprávy a případně vybraný balíček služeb."
+          data-en="When you submit the form, I process your name, email address, message and, where applicable, the selected service package."
+        >
+          Při odeslání formuláře zpracovávám vaše jméno, e-mail, obsah
+          zprávy a případně vybraný balíček služeb.
+        </p>
+
+        <p
+          data-cz="Údaje používám pouze k vyřízení poptávky, odpovědi na zprávu a provedení kroků před případným uzavřením smlouvy."
+          data-en="I use this data only to handle your enquiry, respond to your message and take steps before potentially entering into a contract."
+        >
+          Údaje používám pouze k vyřízení poptávky, odpovědi na zprávu
+          a provedení kroků před případným uzavřením smlouvy.
+        </p>
+
+        <p
+          data-cz="Právním základem je provedení kroků na vaši žádost před uzavřením smlouvy podle čl. 6 odst. 1 písm. b) GDPR. U ostatní běžné komunikace je základem oprávněný zájem na vyřízení zprávy podle čl. 6 odst. 1 písm. f) GDPR."
+          data-en="The legal basis is taking steps at your request before entering into a contract under Article 6(1)(b) GDPR. Other general communication is processed on the basis of the legitimate interest in responding to your message under Article 6(1)(f) GDPR."
+        >
+          Právním základem je provedení kroků na vaši žádost před uzavřením
+          smlouvy podle čl. 6 odst. 1 písm. b) GDPR. U ostatní běžné komunikace
+          je základem oprávněný zájem na vyřízení zprávy podle čl. 6 odst. 1
+          písm. f) GDPR.
+        </p>
+
+        <p
+          data-cz="Poskytnutí údajů je dobrovolné. Bez e-mailu a obsahu zprávy ale nemohu na poptávku odpovědět."
+          data-en="Providing the data is voluntary. However, without an email address and message, I cannot respond to your enquiry."
+        >
+          Poskytnutí údajů je dobrovolné. Bez e-mailu a obsahu zprávy
+          ale nemohu na poptávku odpovědět.
+        </p>
+      </section>
+
+
+      <section
+        class="privacy-section"
+        aria-labelledby="privacy-operation"
+      >
+        <h2
+          id="privacy-operation"
+          data-cz="3. Provoz a zabezpečení webu"
+          data-en="3. Website operation and security"
+        >
+          3. Provoz a zabezpečení webu
+        </h2>
+
+        <p
+          data-cz="Při návštěvě webu mohou být technicky zpracovány údaje, jako je IP adresa, typ zařízení a prohlížeče, navštívená stránka a čas požadavku."
+          data-en="When you visit the website, technical data such as your IP address, device and browser type, requested page and request time may be processed."
+        >
+          Při návštěvě webu mohou být technicky zpracovány údaje, jako je
+          IP adresa, typ zařízení a prohlížeče, navštívená stránka a čas požadavku.
+        </p>
+
+        <p
+          data-cz="Tyto údaje jsou nezbytné pro zobrazení, spolehlivý provoz a zabezpečení webu. Právním základem je můj oprávněný zájem na bezpečném a funkčním provozu webu."
+          data-en="This data is necessary to display, operate and secure the website. The legal basis is my legitimate interest in maintaining a secure and functional website."
+        >
+          Tyto údaje jsou nezbytné pro zobrazení, spolehlivý provoz
+          a zabezpečení webu. Právním základem je můj oprávněný zájem
+          na bezpečném a funkčním provozu webu.
+        </p>
+      </section>
+
+
+      <section
+        class="privacy-section"
+        aria-labelledby="privacy-analytics"
+      >
+        <h2
+          id="privacy-analytics"
+          data-cz="4. Google Analytics a cookies"
+          data-en="4. Google Analytics and cookies"
+        >
+          4. Google Analytics a cookies
+        </h2>
+
+        <p
+          data-cz="Pro měření návštěvnosti používám Google Analytics 4. Analytika se načte pouze tehdy, když ji povolíte prostřednictvím cookie lišty."
+          data-en="I use Google Analytics 4 to measure website traffic. Analytics loads only when you allow it through the cookie banner."
+        >
+          Pro měření návštěvnosti používám Google Analytics 4.
+          Analytika se načte pouze tehdy, když ji povolíte prostřednictvím
+          cookie lišty.
+        </p>
+
+        <p
+          data-cz="Po udělení souhlasu mohou být zpracovány informace o navštívených stránkách, kliknutích, přibližné lokalitě, zařízení, prohlížeči a způsobu použití webu."
+          data-en="After consent is given, information about visited pages, clicks, approximate location, device, browser and use of the website may be processed."
+        >
+          Po udělení souhlasu mohou být zpracovány informace o navštívených
+          stránkách, kliknutích, přibližné lokalitě, zařízení, prohlížeči
+          a způsobu použití webu.
+        </p>
+
+        <p
+          data-cz="Právním základem je váš souhlas podle čl. 6 odst. 1 písm. a) GDPR. Souhlas můžete kdykoliv změnit nebo odvolat pomocí tlačítka Nastavení cookies."
+          data-en="The legal basis is your consent under Article 6(1)(a) GDPR. You can change or withdraw your consent at any time using the Cookie settings button."
+        >
+          Právním základem je váš souhlas podle čl. 6 odst. 1 písm. a) GDPR.
+          Souhlas můžete kdykoliv změnit nebo odvolat pomocí tlačítka
+          Nastavení cookies.
+        </p>
+
+        <div class="privacy-table-wrap">
+          <table class="privacy-table">
+            <thead>
+              <tr>
+                <th data-cz="Úložiště" data-en="Storage">
+                  Úložiště
+                </th>
+
+                <th data-cz="Účel" data-en="Purpose">
+                  Účel
+                </th>
+
+                <th data-cz="Doba" data-en="Duration">
+                  Doba
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><code>cookieConsent_v1</code></td>
+
+                <td
+                  data-cz="Uložení vaší volby cookies"
+                  data-en="Stores your cookie choice"
+                >
+                  Uložení vaší volby cookies
+                </td>
+
+                <td
+                  data-cz="Do změny nebo smazání"
+                  data-en="Until changed or deleted"
+                >
+                  Do změny nebo smazání
+                </td>
+              </tr>
+
+              <tr>
+                <td><code>preferredLang</code></td>
+
+                <td
+                  data-cz="Uložení zvoleného jazyka"
+                  data-en="Stores the selected language"
+                >
+                  Uložení zvoleného jazyka
+                </td>
+
+                <td
+                  data-cz="Do změny nebo smazání"
+                  data-en="Until changed or deleted"
+                >
+                  Do změny nebo smazání
+                </td>
+              </tr>
+
+              <tr>
+                <td><code>selectedPackage</code></td>
+
+                <td
+                  data-cz="Přenesení vybraného balíčku do formuláře"
+                  data-en="Transfers the selected package to the form"
+                >
+                  Přenesení vybraného balíčku do formuláře
+                </td>
+
+                <td
+                  data-cz="Do zavření karty prohlížeče"
+                  data-en="Until the browser tab is closed"
+                >
+                  Do zavření karty prohlížeče
+                </td>
+              </tr>
+
+              <tr>
+                <td><code>_ga</code>, <code>_ga_*</code></td>
+
+                <td
+                  data-cz="Rozlišení návštěv a měření používání webu"
+                  data-en="Distinguishes visits and measures website use"
+                >
+                  Rozlišení návštěv a měření používání webu
+                </td>
+
+                <td
+                  data-cz="Nejvýše 2 roky, pouze po souhlasu"
+                  data-en="Up to 2 years, only after consent"
+                >
+                  Nejvýše 2 roky, pouze po souhlasu
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
+      <section
+        class="privacy-section"
+        aria-labelledby="privacy-providers"
+      >
+        <h2
+          id="privacy-providers"
+          data-cz="5. Poskytovatelé služeb"
+          data-en="5. Service providers"
+        >
+          5. Poskytovatelé služeb
+        </h2>
+
+        <p
+          data-cz="Při provozu webu mohou údaje v nezbytném rozsahu zpracovávat následující poskytovatelé:"
+          data-en="The following providers may process data to the extent necessary to operate the website:"
+        >
+          Při provozu webu mohou údaje v nezbytném rozsahu zpracovávat
+          následující poskytovatelé:
+        </p>
+
+        <ul class="privacy-list">
+          <li
+            data-cz="Netlify, Inc. jako poskytovatel hostingu a zpracování kontaktního formuláře."
+            data-en="Netlify, Inc. as the website hosting and contact form processing provider."
+          >
+            Netlify, Inc. jako poskytovatel hostingu a zpracování
+            kontaktního formuláře.
+          </li>
+
+          <li
+            data-cz="Poskytovatel e-mailových služeb při doručení a vyřízení zprávy."
+            data-en="The email service provider when delivering and responding to your message."
+          >
+            Poskytovatel e-mailových služeb při doručení a vyřízení zprávy.
+          </li>
+
+          <li
+            data-cz="Google jako poskytovatel Google Analytics, pouze pokud analytiku povolíte."
+            data-en="Google as the Google Analytics provider, only if you allow analytics."
+          >
+            Google jako poskytovatel Google Analytics, pouze pokud
+            analytiku povolíte.
+          </li>
+        </ul>
+
+        <p
+          data-cz="Někteří poskytovatelé mohou údaje zpracovávat také mimo Evropský hospodářský prostor. V takovém případě používají odpovídající právní záruky, například standardní smluvní doložky."
+          data-en="Some providers may also process data outside the European Economic Area. In such cases, they use appropriate legal safeguards, such as standard contractual clauses."
+        >
+          Někteří poskytovatelé mohou údaje zpracovávat také mimo Evropský
+          hospodářský prostor. V takovém případě používají odpovídající
+          právní záruky, například standardní smluvní doložky.
+        </p>
+
+        <div class="privacy-provider-links">
+          <a
+            href="https://www.netlify.com/privacy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cz="Zásady soukromí Netlify"
+            data-en="Netlify Privacy Policy"
+          >
+            Zásady soukromí Netlify
+          </a>
+
+          <a
+            href="https://policies.google.com/privacy?hl=cs"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cz="Zásady soukromí Google"
+            data-en="Google Privacy Policy"
+          >
+            Zásady soukromí Google
+          </a>
+        </div>
+      </section>
+
+
+      <section
+        class="privacy-section"
+        aria-labelledby="privacy-retention"
+      >
+        <h2
+          id="privacy-retention"
+          data-cz="6. Doba uchování"
+          data-en="6. Data retention"
+        >
+          6. Doba uchování
+        </h2>
+
+        <ul class="privacy-list">
+          <li
+            data-cz="Údaje z kontaktního formuláře uchovávám nejdéle 12 měsíců od poslední komunikace."
+            data-en="Contact form data is retained for no longer than 12 months after the last communication."
+          >
+            Údaje z kontaktního formuláře uchovávám nejdéle 12 měsíců
+            od poslední komunikace.
+          </li>
+
+          <li
+            data-cz="Pokud dojde ke spolupráci, mohou být související údaje uchovány déle podle zákonných povinností."
+            data-en="If we work together, related data may be retained for longer where required by law."
+          >
+            Pokud dojde ke spolupráci, mohou být související údaje
+            uchovány déle podle zákonných povinností.
+          </li>
+
+          <li
+            data-cz="Uživatelská a událostní data v Google Analytics uchovávám nejdéle 14 měsíců."
+            data-en="User-level and event-level data in Google Analytics is retained for no longer than 14 months."
+          >
+            Uživatelská a událostní data v Google Analytics uchovávám
+            nejdéle 14 měsíců.
+          </li>
+
+          <li
+            data-cz="Technické provozní údaje jsou uchovávány pouze po dobu nezbytnou pro provoz a zabezpečení webu."
+            data-en="Technical operational data is retained only for as long as necessary to operate and secure the website."
+          >
+            Technické provozní údaje jsou uchovávány pouze po dobu
+            nezbytnou pro provoz a zabezpečení webu.
+          </li>
+        </ul>
+      </section>
+
+
+      <section
+        class="privacy-section"
+        aria-labelledby="privacy-rights"
+      >
+        <h2
+          id="privacy-rights"
+          data-cz="7. Vaše práva"
+          data-en="7. Your rights"
+        >
+          7. Vaše práva
+        </h2>
+
+        <p
+          data-cz="Za podmínek stanovených GDPR máte zejména právo:"
+          data-en="Subject to the conditions of the GDPR, you have the right to:"
+        >
+          Za podmínek stanovených GDPR máte zejména právo:
+        </p>
+
+        <ul class="privacy-list">
+          <li
+            data-cz="získat přístup ke svým osobním údajům,"
+            data-en="access your personal data,"
+          >
+            získat přístup ke svým osobním údajům,
+          </li>
+
+          <li
+            data-cz="požádat o jejich opravu nebo výmaz,"
+            data-en="request correction or deletion,"
+          >
+            požádat o jejich opravu nebo výmaz,
+          </li>
+
+          <li
+            data-cz="požádat o omezení zpracování,"
+            data-en="request restriction of processing,"
+          >
+            požádat o omezení zpracování,
+          </li>
+
+          <li
+            data-cz="vznést námitku proti zpracování založenému na oprávněném zájmu,"
+            data-en="object to processing based on legitimate interest,"
+          >
+            vznést námitku proti zpracování založenému na oprávněném zájmu,
+          </li>
+
+          <li
+            data-cz="odvolat souhlas s analytikou,"
+            data-en="withdraw your consent to analytics,"
+          >
+            odvolat souhlas s analytikou,
+          </li>
+
+          <li
+            data-cz="podat stížnost u dozorového úřadu."
+            data-en="lodge a complaint with a supervisory authority."
+          >
+            podat stížnost u dozorového úřadu.
+          </li>
+        </ul>
+
+        <p
+          data-cz="Na webu neprobíhá automatizované rozhodování ani profilování, které by pro vás mělo právní nebo obdobně významné účinky."
+          data-en="The website does not use automated decision-making or profiling that produces legal or similarly significant effects for you."
+        >
+          Na webu neprobíhá automatizované rozhodování ani profilování,
+          které by pro vás mělo právní nebo obdobně významné účinky.
+        </p>
+      </section>
+
+
+      <section
+        class="privacy-section privacy-contact"
+        aria-labelledby="privacy-contact"
+      >
+        <h2
+          id="privacy-contact"
+          data-cz="8. Kontakt a stížnost"
+          data-en="8. Contact and complaints"
+        >
+          8. Kontakt a stížnost
+        </h2>
+
+        <p
+          data-cz="Pokud chcete uplatnit některé ze svých práv nebo se na zpracování údajů zeptat, napište mi na:"
+          data-en="To exercise your rights or ask a question about data processing, contact me at:"
+        >
+          Pokud chcete uplatnit některé ze svých práv nebo se na zpracování
+          údajů zeptat, napište mi na:
+        </p>
+
+        <a
+          class="privacy-email"
+          href="mailto:info@marek-codes.cz"
+        >
+          info@marek-codes.cz
+        </a>
+
+        <p>
+          <span
+            data-cz="Stížnost můžete podat také u "
+            data-en="You can also lodge a complaint with the "
+          >
+            Stížnost můžete podat také u
+          </span>
+
+          <a
+            href="https://uoou.gov.cz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cz="Úřadu pro ochranu osobních údajů"
+            data-en="Czech Office for Personal Data Protection"
+          >
+            Úřadu pro ochranu osobních údajů
+          </a>.
+        </p>
+      </section>
+
+    </article>
+  </div>
 </main>
+
 
 
 
