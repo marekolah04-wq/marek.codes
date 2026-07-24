@@ -1,17 +1,10 @@
-# Force apex + https (canonical domain = https://marek-codes.cz)
+# Canonical domain: HTTPS without www
+http://www.marek-codes.cz/*  https://marek-codes.cz/:splat  301!
+https://www.marek-codes.cz/* https://marek-codes.cz/:splat  301!
+http://marek-codes.cz/*      https://marek-codes.cz/:splat  301!
 
-# 1. Force www -> non-www (redirect non-www to canonical)
-https://www.marek-codes.cz/* https://marek-codes.cz/:splat 301!
-
-# 2. Force http -> https (Netlify auto, ale můžeme explicitně)
-http://* https://:splat 301!
-
-# 3. Pretty URLs: čisté cesty -> .html soubory
-/privacy       /privacy.html       200
-/thanks        /thanks.html        200
-/project/offset-coffee     /project/offset-coffee.html     200
-/project/fitness-coaching  /project/fitness-coaching.html  200
-/project/dashboard         /project/dashboard.html         200
-
-
-
+# Clean URLs
+/privacy                       /privacy.html                       200
+/project/zednictvi-kravciv     /project/zednictvi-kravciv.html     200
+/project/bite-me               /project/bite-me.html               200
+/project/mp-doors              /project/mp-doors.html              200

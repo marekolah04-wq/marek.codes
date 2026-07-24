@@ -462,9 +462,6 @@
   .privacy-table-wrap {
     margin-top: 1.25rem;
     padding-bottom: 0.5rem;
-
-    scrollbar-width: thin;
-    scrollbar-color: rgba(77, 171, 247, 0.45) transparent;
   }
 
   .privacy-table-wrap::-webkit-scrollbar {
