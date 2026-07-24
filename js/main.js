@@ -167,7 +167,7 @@ const trackEvent = (name, params = {}) => {
 const getCopyWhere = (element) => {
   if (!element) return "unknown";
   if (element.closest("footer")) return "footer";
-  if (element.closest(".privacy-page, .thanks-page")) return "privacy";
+  if (element.closest(".privacy-page")) return "privacy";
   if (element.closest("#contact")) return "contact";
   if (element.closest(".project-detail")) return "project";
 
@@ -178,12 +178,31 @@ const getCopyWhere = (element) => {
 /* COOKIE BANNER */
 
 (function cookieConsentInit() {
+  const storedChoice = localStorage.getItem(
+    COOKIE_CONSENT_KEY
+  );
+
+  /*
+   * Uložená volba se použije na každé stránce,
+   * i když na ní není vložený cookie banner.
+   */
+  if (storedChoice === "granted") {
+    grantAnalytics();
+  } else if (storedChoice === "denied") {
+    denyAnalytics();
+  }
+
   const banner = document.getElementById("cookie-banner");
 
   if (!banner) return;
 
-  const acceptButton = banner.querySelector("[data-cookie-accept]");
-  const rejectButton = banner.querySelector("[data-cookie-reject]");
+  const acceptButton = banner.querySelector(
+    "[data-cookie-accept]"
+  );
+
+  const rejectButton = banner.querySelector(
+    "[data-cookie-reject]"
+  );
 
   const hideBanner = () => {
     banner.style.display = "none";
@@ -217,11 +236,9 @@ const getCopyWhere = (element) => {
     saveChoice("denied");
   });
 
-  /*
-   * Delegování funguje i pro footer,
-   * který je do stránky vložený až později přes JavaScript.
-   */
   document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+
     const settingsButton = event.target.closest(
       "[data-cookie-settings]"
     );
@@ -232,23 +249,14 @@ const getCopyWhere = (element) => {
     acceptButton?.focus();
   });
 
-  const storedChoice = localStorage.getItem(
-    COOKIE_CONSENT_KEY
-  );
-
-  if (storedChoice === "granted") {
-    grantAnalytics();
+  if (
+    storedChoice === "granted" ||
+    storedChoice === "denied"
+  ) {
     hideBanner();
-    return;
+  } else {
+    showBanner();
   }
-
-  if (storedChoice === "denied") {
-    denyAnalytics();
-    hideBanner();
-    return;
-  }
-
-  showBanner();
 })();
 
 

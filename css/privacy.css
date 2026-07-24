@@ -331,3 +331,179 @@
   font-size: 1.05rem;
   font-weight: 600;
 }
+
+
+
+
+
+/* RESPONZIVITA ---------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+  .privacy-intro {
+    padding-right: 3rem;
+  }
+
+  .privacy-content {
+    padding-left: 3rem;
+  }
+}
+
+
+@media (max-width: 900px) {
+
+  .privacy-page {
+    padding: 6rem 0;
+  }
+
+  .privacy-layout {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .privacy-intro {
+    position: static;
+    top: auto;
+
+    margin-bottom: 3rem;
+    padding: 0 0 3rem;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .privacy-lead {
+    max-width: 58ch;
+  }
+
+  .privacy-content {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+
+@media (max-width: 640px) {
+
+  .privacy-page {
+    padding: 4.5rem 0 5rem;
+  }
+
+  .privacy-layout {
+    width: 100%;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  .privacy-intro {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .privacy-back {
+    margin-bottom: 1.8rem;
+    font-size: 0.8rem;
+  }
+
+  .privacy-label {
+    margin-bottom: 0.8rem;
+    font-size: 0.68rem;
+  }
+
+  .privacy-intro h1 {
+    font-size: clamp(1.9rem, 9vw, 2.25rem);
+  }
+
+  .privacy-lead {
+    margin-top: 1rem;
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .privacy-updated {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem 0.35rem;
+    margin-top: 1.1rem;
+  }
+
+  .privacy-cookie-settings {
+    max-width: 100%;
+    margin-top: 1.4rem;
+  }
+
+
+  /* OBSAH */
+
+  .privacy-page .privacy-section {
+    margin-bottom: 2.2rem;
+    padding-bottom: 2.2rem;
+  }
+
+  .privacy-section h2 {
+    margin-bottom: 0.85rem;
+    font-size: 1.18rem;
+  }
+
+  .privacy-section p,
+  .privacy-list li {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .privacy-identity {
+    margin-top: 1.1rem;
+    padding-left: 0.85rem;
+    font-size: 0.88rem;
+  }
+
+
+  /* TABULKA */
+
+  .privacy-table-wrap {
+    margin-top: 1.25rem;
+    padding-bottom: 0.5rem;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(77, 171, 247, 0.45) transparent;
+  }
+
+  .privacy-table-wrap::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .privacy-table-wrap::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(77, 171, 247, 0.45);
+  }
+
+  .privacy-table {
+    min-width: 520px;
+  }
+
+  .privacy-table th,
+  .privacy-table td {
+    padding: 0.8rem 0.65rem;
+  }
+
+  .privacy-provider-links {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .privacy-contact .privacy-email {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 400px) {
+
+  .privacy-layout {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .privacy-table {
+    min-width: 500px;
+  }
+}
