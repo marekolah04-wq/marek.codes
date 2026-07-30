@@ -2,6 +2,24 @@
   :root {
     --section-pad-y: 6rem;
   }
+
+  /* ABOUT */
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+    gap: 2.75rem;
+  }
+
+  .about-showcase {
+    min-height: 450px;
+  }
+
+  .about-browser {
+    width: 86%;
+  }
+
+  .about-code-card {
+    width: 72%;
+  }
 }
 
 
@@ -9,6 +27,27 @@
 /* TABLET                                                                     */
 
 @media (max-width: 900px) {
+
+  /* ABOUT */
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .about-copy {
+    order: 1;
+    max-width: 640px;
+  }
+
+  .about-visual {
+    order: 2;
+    width: 100%;
+    max-width: 660px;
+  }
+
+  .about-showcase {
+    min-height: 470px;
+  }
 
   /* CONTACT */
   .contact-panel {
@@ -77,11 +116,6 @@
     transform: translateY(0);
   }
 
-  /* ABOUT */
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
   /* CONTACT */
   .contact-info {
     padding-bottom: 3rem;
@@ -126,8 +160,73 @@
   }
 
   /* ABOUT */
-  .about-card {
-    padding: 1.6rem;
+  .about-copy h2 {
+    font-size: clamp(2.1rem, 10vw, 2.75rem);
+  }
+
+  .about-intro {
+    font-size: 1rem;
+  }
+
+  .about-fact {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 0.9rem 0;
+  }
+
+  .about-cta {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about-showcase {
+    min-height: 360px;
+  }
+
+  .about-browser {
+    bottom: 3%;
+    width: 91%;
+    border-radius: 15px;
+  }
+
+  .about-browser__bar {
+    min-height: 34px;
+    padding: 0 0.7rem;
+  }
+
+  .about-browser__controls span {
+    width: 6px;
+    height: 6px;
+  }
+
+  .about-browser__label {
+    font-size: 0.58rem;
+  }
+
+  .about-code-card {
+    top: 0;
+    width: 80%;
+    border-radius: 14px;
+  }
+
+  .about-code-card__header {
+    min-height: 38px;
+    padding: 0 0.8rem;
+    font-size: 0.66rem;
+  }
+
+  .about-code-card__body {
+    padding: 0.75rem 0.55rem 0.85rem;
+    font-size: clamp(0.56rem, 2.6vw, 0.68rem);
+    line-height: 1.7;
+  }
+
+  .about-code__line::before {
+    margin-right: 0.55rem;
+  }
+
+  .about-code__line--optional {
+    display: none;
   }
 
   /* CONTACT */

@@ -13,7 +13,7 @@ const updateLanguage = () => {
     if (value) el.setAttribute("placeholder", value);
   });
 
-    document.querySelectorAll("[data-cz-title]").forEach((el) => {
+  document.querySelectorAll("[data-cz-title]").forEach((el) => {
     const value = el.dataset[`${currentLang}Title`];
 
     if (value) {
@@ -29,7 +29,7 @@ const updateLanguage = () => {
       currentLang === "cz" ? "Přepnout do angličtiny" : "Switch to Czech"
     );
   }
-  
+
   localStorage.setItem("preferredLang", currentLang)
 
   document.dispatchEvent(new CustomEvent("languagechange"));
@@ -327,25 +327,29 @@ if (contactEmailButton && contactEmailCard) {
 
 
 
-// PRICING 
+// PRICING
 document.addEventListener("DOMContentLoaded", () => {
   const packageInput = document.getElementById("selected-package");
   const messageField = document.querySelector('textarea[name="message"]');
 
   document.querySelectorAll("[data-package]").forEach(btn => {
     btn.addEventListener("click", () => {
-      const chosen = btn.dataset.package;
+    const packageId = btn.dataset.package;
 
-      sessionStorage.setItem("selectedPackage", chosen);
-      trackEvent("pricing_cta_click", { package: chosen });
+    const packageName = currentLang === "en"
+      ? btn.dataset.packageEn
+      : btn.dataset.packageCz;
 
-      if (packageInput) packageInput.value = chosen;
+    sessionStorage.setItem("selectedPackage", packageName);
+    trackEvent("pricing_cta_click", { package: packageId });
 
-      if (messageField && !/^(Balíček|Package):/m.test(messageField.value)) {
-        const label = currentLang === "en" ? "Package" : "Balíček";
-        messageField.value = `${label}: ${chosen}\n` + messageField.value;
-      }
-    });
+    if (packageInput) packageInput.value = packageName;
+
+    if (messageField && !/^(Balíček|Package):/m.test(messageField.value)) {
+      const label = currentLang === "en" ? "Package" : "Balíček";
+      messageField.value = `${label}: ${packageName}\n${messageField.value}`;
+    }
+  });
   });
 });
 

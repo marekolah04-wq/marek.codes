@@ -25,6 +25,8 @@
 }
 
 .price-card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   background: rgba(15,17,26,0.92);
   border: 1px solid rgba(255,255,255,0.08);
@@ -56,6 +58,7 @@
 }
 
 .price-sub {
+  min-height: 3rem;
   color: var(--color-secondary);
   margin: 0 0 1.2rem;
 }
@@ -71,6 +74,16 @@
 .price-cta {
   width: 100%;
   text-transform: uppercase;
+}
+
+.price-card > ul {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.price-card > ul > li:last-child {
+  margin-top: auto;
 }
 
 
