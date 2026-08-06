@@ -99,6 +99,12 @@
   box-shadow 0.35s ease;
 }
 
+.project-image picture {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+}
+
 .project-image img {
   width: 100%;
   min-height: 100%;
