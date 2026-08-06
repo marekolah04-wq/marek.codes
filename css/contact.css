@@ -398,3 +398,95 @@ a.contact-method-value:hover,
     animation: none;
   }
 }
+
+
+@media (max-width: 900px) {
+  .contact-panel {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+  }
+
+  .contact-info {
+    padding: 0 0 3.5rem;
+  }
+
+  .contact-form-panel {
+    padding: 3.5rem 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    padding-bottom: 3rem;
+  }
+
+  .contact-form-panel {
+    padding-top: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #contact h2 {
+    font-size: 1.85rem;
+  }
+
+  .contact-intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .contact-info {
+    padding-bottom: 2.5rem;
+  }
+
+  .contact-form-panel {
+    padding-top: 2.5rem;
+  }
+
+  .contact-methods {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    margin-top: 1.75rem;
+  }
+
+  .contact-method {
+    min-height: 0;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .contact-method-icon {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    margin: 0 1rem 0 0;
+  }
+
+  .contact-method-content {
+    margin-top: 0;
+  }
+
+  .contact-form-header h3 {
+    font-size: 1.65rem;
+  }
+
+  .contact-form-panel form {
+    margin-top: 1.5rem;
+  }
+
+  #contact .field input,
+  #contact .field textarea {
+    font-size: 1rem;
+  }
+
+  #contact .field textarea {
+    min-height: 135px;
+  }
+
+  #contact .submit {
+    min-height: 44px;
+  }
+}

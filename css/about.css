@@ -94,3 +94,77 @@
   width: 100%;
 }
 
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .about-header {
+    max-width: 680px;
+    margin-bottom: 2.25rem;
+  }
+
+  .about-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-header {
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .about-header h2 {
+    font-size: 1.85rem;
+  }
+
+  .about-header p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+    border-radius: 14px;
+  }
+
+  .about-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-card ul {
+    margin: 0.85rem 0 1.25rem;
+    padding-left: 1rem;
+  }
+
+  .about-card li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+  }
+
+  .about-points {
+    gap: 0.9rem;
+    margin: 0.9rem 0 1.25rem;
+  }
+
+  .point {
+    gap: 0.7rem;
+  }
+
+  .dot {
+    flex: 0 0 10px;
+  }
+
+  .about-cta {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+}
