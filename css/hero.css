@@ -347,6 +347,18 @@
     padding: calc(var(--nav-height) + 1.25rem) 0 3.75rem;
   }
 
+    #hero .container {
+    width: 100%;
+    max-width: none;
+    padding-inline: 1rem;
+  }
+
+  .hero-layout,
+  .hero-copy {
+    width: 100%;
+    min-width: 0;
+  }
+
   .hero-layout {
     gap: 2.75rem;
   }
