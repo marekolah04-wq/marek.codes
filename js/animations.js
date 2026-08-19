@@ -4,6 +4,15 @@ function initAnimations() {
 
   if (!revealEls.length) return;
 
+  const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (prefersReducedMotion) {
+    revealEls.forEach((el) => el.classList.add("visible"));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {

@@ -3,7 +3,6 @@
 ========================================================= */
 
 @media (max-width: 700px) {
-@media (max-width: 700px) {
   #projects {
     padding: var(--section-pad-y) 0;
   }
@@ -187,23 +186,51 @@
     margin-top: 1.35rem;
   }
 
-  .project-dot {
-    width: 7px;
-    height: 7px;
-    padding: 0;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.28);
-    border: none;
-    transition:
-      width 0.25s ease,
-      background 0.25s ease,
-      opacity 0.25s ease;
-  }
+.projects-dots {
+  gap: 0;
+  margin-top: 0.75rem;
+}
 
-  .project-dot.active {
-    width: 22px;
-    background: var(--color-accent);
-  }
+.project-dot {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.project-dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.28);
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.project-dot.active {
+  width: 48px;
+  background: transparent;
+}
+
+.project-dot.active::before {
+  width: 22px;
+  background: var(--color-accent);
+}
+
+.project-dot:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -8px;
+}
 }
 
 @media (max-width: 420px) {

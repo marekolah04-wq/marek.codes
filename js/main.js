@@ -8,9 +8,28 @@ const updateLanguage = () => {
     if (value) el.textContent = value
   });
 
+  document.documentElement.lang =
+  currentLang === "cz" ? "cs" : "en";
+
   document.querySelectorAll("[data-cz-placeholder]").forEach((el) => {
     const value = el.dataset[`${currentLang}Placeholder`];
     if (value) el.setAttribute("placeholder", value);
+  });
+
+  document.querySelectorAll("[data-cz-alt]").forEach((el) => {
+  const value = el.dataset[`${currentLang}Alt`];
+
+  if (value) {
+    el.setAttribute("alt", value);
+  }
+  });
+
+  document.querySelectorAll("[data-cz-aria]").forEach((el) => {
+    const value = el.dataset[`${currentLang}Aria`];
+
+    if (value) {
+      el.setAttribute("aria-label", value);
+    }
   });
 
   document.querySelectorAll("[data-cz-title]").forEach((el) => {
@@ -504,9 +523,12 @@ if (projectsCarousel) {
       card.classList.toggle("is-active", cardIndex === activeIndex);
     });
 
-    dots.forEach((dot, dotIndex) => {
-      dot.classList.toggle("active", dotIndex === activeIndex);
-    });
+  dots.forEach((dot, dotIndex) => {
+    const isActive = dotIndex === activeIndex;
+
+    dot.classList.toggle("active", isActive);
+    dot.setAttribute("aria-pressed", String(isActive));
+  });
   };
 
   const goToProject = (index) => {
@@ -521,7 +543,9 @@ if (projectsCarousel) {
     }
 
     cards[activeIndex].scrollIntoView({
-      behavior: "smooth",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ? "auto"
+    : "smooth",
       block: "nearest",
       inline: "center"
     });

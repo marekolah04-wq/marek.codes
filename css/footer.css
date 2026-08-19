@@ -30,6 +30,26 @@
   max-width: 420px;
 }
 
+.footer-business {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 1.5rem;
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.footer-brand .footer-business p,
+.footer-business address {
+  max-width: none;
+  margin: 0;
+  color: inherit;
+}
+
+.footer-business address {
+  font-style: normal;
+}
+
 .footer-links {
   display: grid;
   gap: 0.8rem;

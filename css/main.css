@@ -4,8 +4,8 @@
   --color-primary: #ffffff;
   --color-secondary: #b6c2d1;
   --color-accent: #4dabf7; 
-  --font-heading: 'Space Grotesk', sans-serif;
-  --font-text: 'Inter', sans-serif;
+  --font-heading: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  --font-text: "Inter Variable", "Inter", sans-serif;
 
   --font-size-h1: 3rem;
   --font-size-h2: 2.5rem;

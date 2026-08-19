@@ -98,3 +98,41 @@
   }
 
 }
+
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  .projects-grid {
+    scroll-behavior: auto;
+  }
+
+  .project-card,
+  .project-card.is-active,
+  .service-card,
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .project-dot::before {
+    transition: none;
+  }
+
+    #navbar .logo {
+    animation: none;
+  }
+
+  #navbar,
+  .nav-menu,
+  .nav-toggle span,
+  #navbar nav ul li a::after {
+    transition: none;
+  }
+
+  .service-card:hover,
+  .footer-social .social:hover,
+  .projects-arrow:active {
+    transform: none;
+  }
+}

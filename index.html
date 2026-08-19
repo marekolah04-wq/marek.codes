@@ -5,42 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Marek Oláh, Web developer | marek-codes</title>
-    <meta name="description"
-    content="Navrhuji a stavím weby, které dobře vypadají, fungují a vedou k jasnému cíli. Prohlédněte si projekty a ozvěte se mi.">
+    <title
+    data-cz="Tvorba webových stránek | Marek Oláh"
+    data-en="Web design & development | Marek Oláh"
+    >
+    Tvorba webových stránek | Marek Oláh
+    </title>
+
+    <meta
+    name="description"
+    content="Navrhuji a vytvářím přehledné webové stránky pro živnostníky a firmy. Představí vaši práci a usnadní zákazníkům ozvat se."
+    >
 
     <link rel="canonical" href="https://marek-codes.cz/">
 
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="marek-codes">
     <meta property="og:url" content="https://marek-codes.cz/">
-    <meta property="og:title" content="Marek Oláh, Web developer | marek-codes">
-    <meta property="og:description" content="Web jako nástroj pro růst. Projekty, služby a kontakt.">
+    <meta
+    property="og:title"
+    content="Děláte dobrou práci. Váš web by to měl ukázat."
+    >
+    <meta
+    property="og:description"
+    content="Navrhnu a vytvořím vám přehledný web, který srozumitelně představí vaši práci a usnadní lidem ozvat se."
+    >
     <meta property="og:locale" content="cs_CZ">
     <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:image" content="https://marek-codes.cz/assets/img/og-imgv2.jpg">
+
+    <meta property="og:image" content="https://marek-codes.cz/assets/img/og-marek-codes.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="marek.codes, Web jako nástroj pro růst, Konverze, výkon, detail">
-    <meta property="og:image:secure_url" content="https://marek-codes.cz/assets/img/og-imgv2.jpg">
     <meta property="og:image:type" content="image/jpeg">
+    <meta
+    property="og:image:alt"
+    content="Marek Oláh vedle sloganu Děláte dobrou práci. Váš web by to měl ukázat."
+    >
 
+    <meta name="twitter:image" content="https://marek-codes.cz/assets/img/og-marek-codes.jpg">
+    <meta
+    name="twitter:image:alt"
+    content="Marek Oláh vedle sloganu Děláte dobrou práci. Váš web by to měl ukázat."
+    >
+
+    <meta name="theme-color" content="#0f111a">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Marek Oláh, Web developer | marek-codes">
-    <meta name="twitter:description" content="Navrhuji a stavím weby, které dobře vypadají, fungují a vedou k jasnému cíli. Prohlédněte si projekty a ozvěte se mi.">
-    <meta name="twitter:image" content="https://marek-codes.cz/assets/img/og-imgv2.jpg">
-
-
-
-
-
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap"
-        rel="stylesheet">
+    <meta
+    name="twitter:title"
+    content="Děláte dobrou práci. Váš web by to měl ukázat."
+    >
+    <meta
+    name="twitter:description"
+    content="Navrhnu a vytvořím vám přehledný web, který srozumitelně představí vaši práci a usnadní lidem ozvat se."
+    >
 
 
 
@@ -55,7 +73,7 @@
         <div class="container nav-container">
             <a href="/" class="logo">marek-codes</a>
 
-            <button class="nav-toggle" aria-label="Open menu">
+            <button class="nav-toggle" type="button" aria-label="Open menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -69,7 +87,7 @@
                     <li><a href="#pricing" data-cz="Ceník" data-en="Pricing">Ceník</a></li>
                     <li><a href="#about" data-cz="O mně" data-en="About">O mně</a></li>
                     <li><a href="#contact" data-cz="Kontakt" data-en="Contact">Kontakt</a></li>
-                    <li><button id="lang-switch" aria-label="Přepnout jazyk">CZ / EN</button></li>
+                    <li><button id="lang-switch" type="button" aria-label="Přepnout jazyk">CZ / EN</button></li>
                 </ul>
             </nav>
         </div>
@@ -77,7 +95,7 @@
 
 
 
-
+<main id="main-content">
 <section id="hero" aria-labelledby="hero-title">
     <div class="container">
         <div class="hero-layout">
@@ -139,15 +157,25 @@
             </div>
 
             <div class="hero-portrait">
-                <img
-                    src="/assets/img/optimized/hero-marek.avif"
-                    width="1200"
-                    height="1440"
-                    alt="Marek Oláh"
-                    loading="eager"
-                    fetchpriority="high"
-                    decoding="async"
-                >
+            <img
+            src="/assets/img/optimized/hero-marek-800.avif"
+            srcset="
+                /assets/img/optimized/hero-marek-480.avif 480w,
+                /assets/img/optimized/hero-marek-800.avif 800w,
+                /assets/img/optimized/hero-marek-1200.avif 1200w
+            "
+            sizes="
+                (max-width: 600px) 88vw,
+                (max-width: 880px) 420px,
+                (max-width: 1020px) 410px,
+                500px
+            "
+            width="1200"
+            height="1440"
+            alt="Marek Oláh"
+            loading="eager"
+            fetchpriority="high"
+            >
             </div>
 
         </div>
@@ -168,9 +196,9 @@
             </div>
 <div class="projects-carousel" data-projects-carousel>
 
-    <button 
-        class="projects-arrow projects-arrow--prev" 
-        type="button" 
+    <button
+        class="projects-arrow projects-arrow--prev"
+        type="button"
         data-project-prev
         aria-label="Předchozí projekt"
         data-cz-aria="Předchozí projekt"
@@ -191,7 +219,7 @@
                         type="image/avif"
                     >
 
-                    <img 
+                    <img
                         src="/assets/img/project-3-full.webp"
                         width="800"
                         height="2528"
@@ -204,14 +232,14 @@
                 </picture>
 
                     <div class="project-overlay">
-                        <p 
+                        <p
                             data-cz="Web pro rekonstrukce, služby, ukázky realizací a jednoduché odeslání poptávky."
                             data-en="A website for renovations, services, completed work, and simple inquiry submission."
                         >
                             Web pro rekonstrukce, služby, ukázky realizací a jednoduché odeslání poptávky.
                         </p>
 
-                        <span 
+                        <span
                             class="project-detail-link"
                             data-cz="Zobrazit detail"
                             data-en="View detail"
@@ -240,7 +268,7 @@
                         type="image/avif"
                     >
 
-                    <img 
+                    <img
                         src="/assets/img/project-1-full.webp"
                         width="800"
                         height="2200"
@@ -253,14 +281,14 @@
                 </picture>
 
                     <div class="project-overlay">
-                        <p 
+                        <p
                             data-cz="Web pro burger stánek s menu, lokací, kontakty a rychlou orientací na mobilu."
                             data-en="A website for a burger stand with a menu, location, contact details, and fast mobile orientation."
                         >
                             Web pro burger stánek s menu, lokací, kontakty a rychlou orientací na mobilu.
                         </p>
 
-                        <span 
+                        <span
                             class="project-detail-link"
                             data-cz="Zobrazit detail"
                             data-en="View detail"
@@ -288,7 +316,7 @@
                         type="image/avif"
                     >
 
-                    <img 
+                    <img
                         src="/assets/img/project-2-full.webp"
                         width="800"
                         height="2196"
@@ -301,14 +329,14 @@
                 </picture>
 
                     <div class="project-overlay">
-                        <p 
+                        <p
                             data-cz="Firemní web pro prezentaci služeb, realizací, partnerů a rychlý kontakt."
                             data-en="A company website presenting services, completed work, partners, and quick contact."
                         >
                             Firemní web pro prezentaci služeb, realizací, partnerů a rychlý kontakt.
                         </p>
 
-                        <span 
+                        <span
                             class="project-detail-link"
                             data-cz="Zobrazit detail"
                             data-en="View detail"
@@ -317,7 +345,7 @@
                         </span>
                     </div>
                 </div>
-                
+
                 <div class="project-content">
                     <h3 data-cz="🚪 MP DOORS" data-en="🚪 MP DOORS">
                         🚪 MP DOORS
@@ -328,9 +356,9 @@
 
     </div>
 
-    <button 
-        class="projects-arrow projects-arrow--next" 
-        type="button" 
+    <button
+        class="projects-arrow projects-arrow--next"
+        type="button"
         data-project-next
         aria-label="Další projekt"
         data-cz-aria="Další projekt"
@@ -339,10 +367,42 @@
         ›
     </button>
 
-    <div class="projects-dots" data-project-dots aria-label="Přepínání projektů">
-        <button class="project-dot active" type="button" data-project-dot="0" aria-label="Projekt 1"></button>
-        <button class="project-dot" type="button" data-project-dot="1" aria-label="Projekt 2"></button>
-        <button class="project-dot" type="button" data-project-dot="2" aria-label="Projekt 3"></button>
+        <div
+        class="projects-dots"
+        data-project-dots
+        role="group"
+        aria-label="Přepínání projektů"
+        data-cz-aria="Přepínání projektů"
+        data-en-aria="Project selector"
+        >
+          <button
+        class="project-dot active"
+        type="button"
+        data-project-dot="0"
+        aria-pressed="true"
+        aria-label="Projekt 1"
+        data-cz-aria="Projekt 1"
+        data-en-aria="Project 1"
+    ></button>
+        <button
+        class="project-dot"
+        type="button"
+        data-project-dot="1"
+        aria-pressed="false"
+        aria-label="Projekt 2"
+        data-cz-aria="Projekt 2"
+        data-en-aria="Project 2"
+        ></button>
+
+                    <button
+            class="project-dot"
+            type="button"
+            data-project-dot="2"
+            aria-pressed="false"
+            aria-label="Projekt 3"
+            data-cz-aria="Projekt 3"
+            data-en-aria="Project 3"
+            ></button>
     </div>
 
 </div>
@@ -834,7 +894,7 @@
                         </span>
 
                         <a
-                            href="/privacy.html"
+                            href="/privacy"
                             data-cz="zásad ochrany osobních údajů"
                             data-en="Privacy Policy"
                         >
@@ -879,36 +939,50 @@
         </div>
     </section>
 
+</main>
+
+
+
 
     <footer id="footer">
         <div class="container footer-inner">
-            <div class="footer-brand">
-                <a href="/" class="footer-logo">marek-codes</a>
-                <p data-cz="Web jako nástroj pro růst."
-                    data-en="Websites built to support growth.">
-                    Web jako nástroj pro růst.         
-                </p>
+        <div class="footer-brand">
+        <a href="/" class="footer-logo">marek-codes</a>
 
-                <br>
+        <p
+            class="footer-tagline"
+            data-cz="Děláte dobrou práci. Váš web by to měl ukázat."
+            data-en="You do great work. Your website should show it."
+        >
+            Děláte dobrou práci. Váš web by to měl ukázat.
+        </p>
 
-                <p>Marek Oláh</p>
-                <p data-cz="IČO: 24370673"
-                    data-en="Company ID: 24370673">
-                    IČO: 24370673
-                </p>
-                <p data-cz="Kdyně, Markova 564"
-                    data-en="Kdyně, Markova 564">
-                    Kdyně, Markova 564
-                </p>
-            </div>
+        <div class="footer-business">
+            <p>Marek Oláh</p>
 
-            <nav class="footer-links" aria-label="Footer navigation">
+            <p
+            data-cz="IČO: 24370673"
+            data-en="Business ID: 24370673"
+            >
+            IČO: 24370673
+            </p>
+
+            <address>Markova 564, Kdyně</address>
+        </div>
+        </div>
+
+            <nav
+            class="footer-links"
+            aria-label="Navigace v zápatí"
+            data-cz-aria="Navigace v zápatí"
+            data-en-aria="Footer navigation"
+            >
             <a href="/#projects" data-cz="Projekty" data-en="Projects">Projekty</a>
             <a href="/#services" data-cz="Služby" data-en="Services">Služby</a>
             <a href="/#about" data-cz="O mně" data-en="About">O mně</a>
             <a href="/#contact" data-cz="Kontakt" data-en="Contact">Kontakt</a>
 
-            <a href="/privacy.html" data-cz="Soukromí" data-en="Privacy">Soukromí</a>
+            <a href="/privacy" data-cz="Soukromí" data-en="Privacy">Soukromí</a>
             <button
                 type="button"
                 class="footer-link-btn"
@@ -941,7 +1015,13 @@
                     © 2026 Marek Oláh. Všechna práva vyhrazena.
                 </small>
 
-                <div class="footer-social" aria-label="Social links">
+                <div
+                class="footer-social"
+                role="group"
+                aria-label="Sociální sítě"
+                data-cz-aria="Sociální sítě"
+                data-en-aria="Social links"
+                >
                     <a class="social" href="https://github.com/marekolah04-wq" target="_blank" rel="noopener"
                         aria-label="GitHub">
                         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -983,7 +1063,7 @@
 
 
     <script type="module" src="/src/main.js"></script>
-    
+
 </body>
 
 </html>
