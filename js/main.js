@@ -22,6 +22,16 @@ const updateLanguage = () => {
   if (value) {
     el.setAttribute("alt", value);
   }
+});
+
+  document.documentElement.lang = currentLang === "cz" ? "cs" : "en";
+
+  document.querySelectorAll("[data-cz-alt]").forEach((el) => {
+  const value = el.dataset[`${currentLang}Alt`];
+
+  if (value) {
+    el.setAttribute("alt", value);
+  }
   });
 
   document.querySelectorAll("[data-cz-aria]").forEach((el) => {
